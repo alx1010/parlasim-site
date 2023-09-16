@@ -235,7 +235,7 @@
 
         // Sets up the ability to click individual districts and see results
 
-        function jurisClicks() {
+            function jurisClicks() {
               const jurisName = document.getElementById("jurisName")
               const jursMargin = document.getElementById("jurisMargin")
 
@@ -391,32 +391,7 @@
         modeThreeButton.addEventListener('click', () => {mapMode = 2;colourmap()});
         modeFourButton.addEventListener('click', () => {mapMode = 3;colourmap()});
 
-        // Does initial setup once all content has loaded
-
-        var MAP338
-
-        document.addEventListener('DOMContentLoaded', function() {
-          // get first <object>
-          const objTag = document.querySelector('.map338');
-          
-          // wait for SVG to load
-          objTag.addEventListener('load', () => {
-          
-            // reference to SVG document
-            MAP338 = objTag.getSVGDocument();
-            
-            SeatResults()
-
-            for(let x = 0; x < 338; x++){initSeatWinner[x]=SeatWinner[x]}
-
-            for(let x = 0;x < partyabbrv.length; x++){initelec[x] = nationalvote[x]}
-
-            colourmap()
-            setTextVotes()
-            setTextSeats()
-            jurisClicks()
-          });
-        }) 
+        
 
         simButton.addEventListener('click', () => {        
           Swinger()
