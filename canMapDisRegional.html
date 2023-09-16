@@ -173,10 +173,10 @@
           </tr>
         </table>
 
-        <br><br><table>
+        <br><br><table style="width: 10%;">
           <tr>
             <td><button id="btnSubmit">Submit</button></td>
-            <td><p id="submitCheck" style="font-size: 24px;">...</p></td>
+            <td><p id="submitCheck" style="font-size: 24px; text-align: right;">Waiting...</p></td>
           </tr>
         </table>
 
@@ -195,7 +195,6 @@
             <td><button class ="modefour"> Solid Colour </button></td>
           </tr>
         </table>
-        
       </div>
 
       
@@ -574,7 +573,7 @@
           setTextVotes()
           setTextSeats()
 
-          document.getElementById("submitCheck").innerText = "..."
+          document.getElementById("submitCheck").innerText = "Waiting..."
         });
 
         modeOneButton.addEventListener('click', () => {mapMode = 0;colourmap()});
