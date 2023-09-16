@@ -259,11 +259,11 @@
           if(mapMode==1){ // Colours the map based on the percentage of vote recieved by the winner
             for(let x = jts; x < jtc; x++){
               //console.log(juris[x])
-              if(WinningPerc[x]>=0.50){eval('setSVGColour("seat'+ juris[x] + '", ' + partyabbrv[SeatWinner[x]] + 'pallette[0])')}
-              else if(WinningPerc[x]<0.50 && WinningPerc[x]>=0.45){eval('setSVGColour("seat'+ juris[x] + '", ' + partyabbrv[SeatWinner[x]] + 'pallette[1])')}
-              else if(WinningPerc[x]<0.45 && WinningPerc[x]>=0.40){eval('setSVGColour("seat'+ juris[x] + '", ' + partyabbrv[SeatWinner[x]] + 'pallette[2])')}
-              else if(WinningPerc[x]<0.40 && WinningPerc[x]>=0.35){eval('setSVGColour("seat'+ juris[x] + '", ' + partyabbrv[SeatWinner[x]] + 'pallette[3])')}
-              else if(WinningPerc[x]<0.35 && WinningPerc[x]>=0.30){eval('setSVGColour("seat'+ juris[x] + '", ' + partyabbrv[SeatWinner[x]] + 'pallette[4])')}
+              if(WinningPerc[x]>=0.70){eval('setSVGColour("seat'+ juris[x] + '", ' + partyabbrv[SeatWinner[x]] + 'pallette[0])')}
+              else if(WinningPerc[x]<0.70 && WinningPerc[x]>=0.60){eval('setSVGColour("seat'+ juris[x] + '", ' + partyabbrv[SeatWinner[x]] + 'pallette[1])')}
+              else if(WinningPerc[x]<0.60 && WinningPerc[x]>=0.50){eval('setSVGColour("seat'+ juris[x] + '", ' + partyabbrv[SeatWinner[x]] + 'pallette[2])')}
+              else if(WinningPerc[x]<0.50 && WinningPerc[x]>=0.40){eval('setSVGColour("seat'+ juris[x] + '", ' + partyabbrv[SeatWinner[x]] + 'pallette[3])')}
+              else if(WinningPerc[x]<0.40 && WinningPerc[x]>=0.30){eval('setSVGColour("seat'+ juris[x] + '", ' + partyabbrv[SeatWinner[x]] + 'pallette[4])')}
               else if(WinningPerc[x]<0.30){eval('setSVGColour("seat'+ juris[x] + '", ' + partyabbrv[SeatWinner[x]] + 'pallette[5])')}
               else(console.log("Something went wrong. WinningPerc: " + WinningPerc[x]))
             }
