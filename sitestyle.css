@@ -9,3 +9,9 @@
     left:40%; top:0%;
     width: 60%; height: 100%;
   }
+
+  #jurisTable {
+    position:absolute; 
+    left:72%; top:0%;
+    width: 25%;
+  }
