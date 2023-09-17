@@ -234,6 +234,8 @@
         } 
 
         // Sets up the ability to click individual districts and see results
+         
+        var clicked = 0
 
         function jurisClicks() {
               const jurisName = document.getElementById("jurisName")
@@ -255,6 +257,7 @@
                 grnJuris.innerText = fourDecRound(grnsv[x] * 100) + "%"
                 ppcJuris.innerText = fourDecRound(ppcsv[x] * 100) + "%"
                 blocJuris.innerText = fourDecRound(blocsv[x] * 100) + "%"
+                clicked = x
               }
 
               var c = "'click'"
@@ -263,7 +266,7 @@
                 eval('MAP338.getElementById("' + jurisid + '").addEventListener(' + c + ' , () => {onJurisClick(x)})')
               }
 
-              onJurisClick(0)
+              onJurisClick(clicked)
             }
 
         // Colours the map
