@@ -34,16 +34,13 @@ var nationalvote = [];
 var initelec = [];
 
 function initJurisVote() {
-  for (let y = 0; y < 338; y++) {
-    var jurisSum =
-      lpcraw[y] +
-      cpcraw[y] +
-      ndpraw[y] +
-      grnraw[y] +
-      ppcraw[y] +
-      blocraw[y] +
-      othraw[y];
-    for (let x = 0; x < partyabbrv.length; x++) {
+  for (let y = 0; y < juris.length; y++) {
+    var jurisSum = 0
+    for(let x = 0; x < partyabbrv.length; x++) {
+        eval('jurisSum = jurisSum + ' + partyabbrv[x] + 'raw[y]')
+    }
+    jurisSum = jurisSum + othraw[y];
+    for(let x = 0; x < partyabbrv.length; x++) {
       eval(
         partyabbrv[x] +
           "sv[y] = fourDecRound(" +
@@ -76,7 +73,7 @@ function SeatResults() {
   for (let y = 0; y < partyabbrv.length; y++) {
     SeatCount[y] = 0;
   }
-  for (let x = 0; x < 338; x++) {
+  for (let x = 0; x < juris.length; x++) {
     SeatFlip[x] = 999;
 
     var w = Math.max(
@@ -117,7 +114,7 @@ function SeatResults() {
 // Applies the swing
 
 function Swinger() {
-  for (let x = 0; x < 338; x++) {
+  for (let x = 0; x < juris.length; x++) {
     for (let y = 0; y < partyabbrv.length; y++) {
       eval(
         partyabbrv[y] +
@@ -160,44 +157,25 @@ function arraySecondMax(numArray) {
 
 var clicked = 0;
 
-function initJurisElements() {
+function jurisClicks() {
     const jurisName = document.getElementById("jurisName");
     const jurisMargin = document.getElementById("jurisMargin");
-
+    
     for(let x = 0; x < partyabbrv.length; x++){
         eval('var ' + partyabbrv[x] + 'Juris = document.getElementById("' + partyabbrv[x] + 'Juris")')
     }
 
-    //const lpcJuris = document.getElementById("lpcJuris");
-    //const cpcJuris = document.getElementById("cpcJuris");
-    //const ndpJuris = document.getElementById("ndpJuris");
-    //const grnJuris = document.getElementById("grnJuris");
-    //const ppcJuris = document.getElementById("ppcJuris");
-    //const blocJuris = document.getElementById("blocJuris");
-}
-
-initJurisElements()
-
-function jurisClicks() {
-
   function onJurisClick(x) {
     jurisName.innerText = jurisnames[x];
-    jurisMargin.innerText =
-      "Margin: " +
-      fourDecRound(WinningDiff[x] * 100) +
-      "% => " +
-      partyabbrv[SeatWinner[x]].toUpperCase();
-    lpcJuris.innerText = fourDecRound(lpcsv[x] * 100) + "%";
-    cpcJuris.innerText = fourDecRound(cpcsv[x] * 100) + "%";
-    ndpJuris.innerText = fourDecRound(ndpsv[x] * 100) + "%";
-    grnJuris.innerText = fourDecRound(grnsv[x] * 100) + "%";
-    ppcJuris.innerText = fourDecRound(ppcsv[x] * 100) + "%";
-    blocJuris.innerText = fourDecRound(blocsv[x] * 100) + "%";
+    jurisMargin.innerText = "Margin: " + fourDecRound(WinningDiff[x] * 100) +"% => " + partyabbrv[SeatWinner[x]].toUpperCase();
+    for(let y = 0; y < partyabbrv.length; y++){
+        eval(partyabbrv[y] + 'Juris.innerText = fourDecRound(' + partyabbrv[y] + 'sv[x] * 100) + "%"')
+    }
     clicked = x;
   }
 
   var c = "'click'";
-  for (let x = 0; x < lpcraw.length; x++) {
+  for (let x = 0; x < juris.length; x++) {
     var jurisid = "seat" + juris[x];
     eval(
       'MAP338.getElementById("' +
@@ -219,7 +197,7 @@ function colourmap() {
   }
 
   // testing purposes
-  var jtc = 338; // juris to count
+  var jtc = juris.length; // juris to count
   var jts = 0; // juris to skip
 
   if (mapMode == 0) {
@@ -437,7 +415,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     SeatResults();
 
-    for (let x = 0; x < 338; x++) {
+    for (let x = 0; x < juris.length; x++) {
       initSeatWinner[x] = SeatWinner[x];
     }
 
@@ -448,7 +426,6 @@ document.addEventListener("DOMContentLoaded", function () {
     colourmap();
     setTextVotes();
     setTextSeats();
-    initJurisElements();
     jurisClicks();
   });
 });
