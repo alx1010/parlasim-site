@@ -76,22 +76,24 @@ function SeatResults() {
   for (let x = 0; x < juris.length; x++) {
     SeatFlip[x] = 999;
 
-    var w = Math.max(
-      lpcsv[x],
-      cpcsv[x],
-      blocsv[x],
-      ndpsv[x],
-      grnsv[x],
-      ppcsv[x]
-    );
-    var sw = arraySecondMax([
-      lpcsv[x],
-      cpcsv[x],
-      blocsv[x],
-      ndpsv[x],
-      grnsv[x],
-      ppcsv[x],
-    ]);
+    var w = 0
+    var sw = 0
+
+    // Finding the max
+
+    for(let y = 0; y < partyabbrv.length; y++){
+        if(eval(partyabbrv[y] + 'sv[x]') > w){
+            w = eval(partyabbrv[y] + 'sv[x]')
+        }
+    }
+
+    // Finding the second max
+    
+    for(let y = 0; y < partyabbrv.length; y++){
+        if(eval(partyabbrv[y] + 'sv[x]') > sw && eval(partyabbrv[y] + 'sv[x]') != w){
+            sw = eval(partyabbrv[y] + 'sv[x]')
+        }
+    }
 
     WinningDiff[x] = fourDecRound(w - sw);
 
