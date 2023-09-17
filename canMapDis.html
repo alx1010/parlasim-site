@@ -2,44 +2,45 @@
     <head>
         <title>Canada Map</title>
         <link rel="stylesheet" href="sitestyle.css">
+        <link rel="stylesheet" href="canadastyle.css">
     </head>
 
     <body scroll="no" style="overflow: hidden">
 
       <div id="myTable">
-        <table style="width: 40%; font-size: 24px;">
+        <table>
           <tr>
-            <td id = "lpcVotes"></td>
-            <td id = "cpcVotes"></td>
-            <td id = "ndpVotes"></td>
-            <td id = "grnVotes"></td>
-            <td id = "ppcVotes"></td>
-            <td id = "blocVotes"></td>
+            <td class="lpcheader" id = "lpcVotes"></td>
+            <th class="cpcheader" id = "cpcVotes"></td>
+            <td class="ndpheader" id = "ndpVotes"></td>
+            <td class="grnheader" id = "grnVotes"></td>
+            <td class="ppcheader" id = "ppcVotes"></td>
+            <td class="blocheader" id = "blocVotes"></td>
             <td id = "sumcheck" style="font-size: 28; font-weight: bold;"></h2>
           </tr>
           <tr>
-            <td><button id = "lpcup"></button></td>
-            <td><button id = "cpcup"></button></td>
-            <td><button id = "ndpup"></button></td>
-            <td><button id = "grnup"></button></td>
-            <td><button id = "ppcup"></button></td>
-            <td><button id = "blocup"></button></td>   
+            <td class="lpc"><button id = "lpcup">+%</button></td>
+            <td class="cpc"><button id = "cpcup">+%</button></td>
+            <td class="ndp"><button id = "ndpup">+%</button></td>
+            <td class="grn"><button id = "grnup">+%</button></td>
+            <td class="ppc"><button id = "ppcup">+%</button></td>
+            <td class="bloc"><button id = "blocup">+%</button></td>   
           </tr>
           <tr>
-            <td><button id = "lpcdown"></button></td>
-            <td><button id = "cpcdown"></button></td>
-            <td><button id = "ndpdown"></button></td>
-            <td><button id = "grndown"></button></td>
-            <td><button id = "ppcdown"></button></td>
-            <td><button id = "blocdown"></button></td>   
+            <td class="lpc"><button id = "lpcdown">-%</button></td>
+            <td class="cpc"><button id = "cpcdown">-%</button></td>
+            <td class="ndp"><button id = "ndpdown">-%</button></td>
+            <td class="grn"><button id = "grndown">-%</button></td>
+            <td class="ppc"><button id = "ppcdown">-%</button></td>
+            <td class="bloc"><button id = "blocdown">-%</button></td>   
           </tr>
           <tr style="font-size: 16px">
-            <td id = "lpcSeats"></td>
-            <td id = "cpcSeats"></td>
-            <td id = "ndpSeats"></td>
-            <td id = "grnSeats"></td>
-            <td id = "ppcSeats"></td>
-            <td id = "blocSeats"></td>
+            <td class="lpc" id = "lpcSeats"></td>
+            <td class="cpc" id = "cpcSeats"></td>
+            <td class="ndp" id = "ndpSeats"></td>
+            <td class="grn" id = "grnSeats"></td>
+            <td class="ppc" id = "ppcSeats"></td>
+            <td class="bloc" id = "blocSeats"></td>
             <td>170 needed for Majority</td>
           </tr>
         </table>
