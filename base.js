@@ -4,6 +4,8 @@ var initSeatWinner = [];
 
 var SeatFlip = [];
 
+for(let x = 0; x < partyabbrv.length; x++){eval('var ' + partyabbrv[x] + 'sv = []')}
+
 var WinningDiff = [];
 var WinningPerc = [];
 
