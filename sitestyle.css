@@ -32,10 +32,10 @@
 
 #jurisTable {
   position: absolute;
-  left: 70%;
-  top: 0%;
+  left: 72.5%;
+  top: -3%;
   width: 25%;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 #jurisTable table {
