@@ -1,6 +1,7 @@
 #myTable button {
   width: 90%;
-  height: 60%;
+  height: 80%;
+  font-size: 60%;
   font-weight: bold;
   background-color: beige;
 }
@@ -8,7 +9,7 @@
 #myTable table {
   width: 40%;
   height: 20%;
-  font-size: 24px;
+  font-size: 150%;
 }
 
 #myTable td {
@@ -33,9 +34,9 @@
 #jurisTable {
   position: absolute;
   left: 72.5%;
-  top: -3%;
+  top: 0%;
   width: 25%;
-  font-size: 16px;
+  font-size: 120%;
 }
 
 #jurisTable table {
