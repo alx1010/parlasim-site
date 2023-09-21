@@ -690,12 +690,12 @@ var lpcpalette = [
   "#e8767a",
 ];
 var cpcpalette = [
-  "#0F162B",
-  "#132D52",
-  "#15539B",
-  "#4C82C3",
-  "#8BAFDC",
-  "#a7c5eb",
+  "#1e3854",
+  "#284b71",
+  "#376697",
+  "#4780bc",
+  "#6d9aca",
+  "#93b3d7",
 ];
 var ndppalette = [
   "#783f0a",
