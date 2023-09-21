@@ -214,7 +214,7 @@ function colourmap() {
             juris[x] +
             '", ' +
             partyabbrv[SeatWinner[x]] +
-            "pallette[0])"
+            "palette[0])"
         );
       } else if (WinningDiff[x] < 0.25 && WinningDiff[x] >= 0.2) {
         eval(
@@ -222,7 +222,7 @@ function colourmap() {
             juris[x] +
             '", ' +
             partyabbrv[SeatWinner[x]] +
-            "pallette[1])"
+            "palette[1])"
         );
       } else if (WinningDiff[x] < 0.2 && WinningDiff[x] >= 0.15) {
         eval(
@@ -230,7 +230,7 @@ function colourmap() {
             juris[x] +
             '", ' +
             partyabbrv[SeatWinner[x]] +
-            "pallette[2])"
+            "palette[2])"
         );
       } else if (WinningDiff[x] < 0.15 && WinningDiff[x] >= 0.1) {
         eval(
@@ -238,7 +238,7 @@ function colourmap() {
             juris[x] +
             '", ' +
             partyabbrv[SeatWinner[x]] +
-            "pallette[3])"
+            "palette[3])"
         );
       } else if (WinningDiff[x] < 0.1 && WinningDiff[x] >= 0.05) {
         eval(
@@ -246,7 +246,7 @@ function colourmap() {
             juris[x] +
             '", ' +
             partyabbrv[SeatWinner[x]] +
-            "pallette[4])"
+            "palette[4])"
         );
       } else if (WinningDiff[x] < 0.05) {
         eval(
@@ -254,7 +254,7 @@ function colourmap() {
             juris[x] +
             '", ' +
             partyabbrv[SeatWinner[x]] +
-            "pallette[5])"
+            "palette[5])"
         );
       } else
         console.log("Something went wrong. WinningDiff: " + WinningDiff[x]);
@@ -271,7 +271,7 @@ function colourmap() {
             juris[x] +
             '", ' +
             partyabbrv[SeatWinner[x]] +
-            "pallette[0])"
+            "palette[0])"
         );
       } else if (WinningPerc[x] < 0.7 && WinningPerc[x] >= 0.6) {
         eval(
@@ -279,7 +279,7 @@ function colourmap() {
             juris[x] +
             '", ' +
             partyabbrv[SeatWinner[x]] +
-            "pallette[1])"
+            "palette[1])"
         );
       } else if (WinningPerc[x] < 0.6 && WinningPerc[x] >= 0.5) {
         eval(
@@ -287,7 +287,7 @@ function colourmap() {
             juris[x] +
             '", ' +
             partyabbrv[SeatWinner[x]] +
-            "pallette[2])"
+            "palette[2])"
         );
       } else if (WinningPerc[x] < 0.5 && WinningPerc[x] >= 0.4) {
         eval(
@@ -295,7 +295,7 @@ function colourmap() {
             juris[x] +
             '", ' +
             partyabbrv[SeatWinner[x]] +
-            "pallette[3])"
+            "palette[3])"
         );
       } else if (WinningPerc[x] < 0.4 && WinningPerc[x] >= 0.3) {
         eval(
@@ -303,7 +303,7 @@ function colourmap() {
             juris[x] +
             '", ' +
             partyabbrv[SeatWinner[x]] +
-            "pallette[4])"
+            "palette[4])"
         );
       } else if (WinningPerc[x] < 0.3) {
         eval(
@@ -311,7 +311,7 @@ function colourmap() {
             juris[x] +
             '", ' +
             partyabbrv[SeatWinner[x]] +
-            "pallette[5])"
+            "palette[5])"
         );
       } else
         console.log("Something went wrong. WinningPerc: " + WinningPerc[x]);
@@ -327,7 +327,7 @@ function colourmap() {
             juris[x] +
             '", ' +
             partyabbrv[SeatWinner[x]] +
-            "pallette[5])"
+            "palette[5])"
         );
       } else if (SeatFlip[x] != 999) {
         eval(
@@ -335,7 +335,7 @@ function colourmap() {
             juris[x] +
             '", ' +
             partyabbrv[SeatWinner[x]] +
-            "pallette[1])"
+            "palette[1])"
         );
       } else console.log("Something went wrong. SeatFlip: " + SeatFlip[x]);
     }
@@ -349,7 +349,7 @@ function colourmap() {
           juris[x] +
           '", ' +
           partyabbrv[SeatWinner[x]] +
-          "pallette[3])"
+          "palette[3])"
       );
     }
   }

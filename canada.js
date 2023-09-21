@@ -681,7 +681,7 @@ juris = [
 
 var partyabbrv = ["lpc", "cpc", "ndp", "grn", "ppc", "bloc"];
 
-var lpcpallette = [
+var lpcpalette = [
   "#630408",
   "#82060b",
   "#ad0c13",
@@ -689,7 +689,7 @@ var lpcpallette = [
   "#e0454c",
   "#e8767a",
 ];
-var cpcpallette = [
+var cpcpalette = [
   "#0F162B",
   "#132D52",
   "#15539B",
@@ -697,7 +697,7 @@ var cpcpallette = [
   "#8BAFDC",
   "#a7c5eb",
 ];
-var ndppallette = [
+var ndppalette = [
   "#783f0a",
   "#944d0b",
   "#c56813",
@@ -705,7 +705,7 @@ var ndppallette = [
   "#f79c4c",
   "#f9b57a",
 ];
-var grnpallette = [
+var grnpalette = [
   "#174213",
   "#205d1a",
   "#2d7d25",
@@ -713,7 +713,7 @@ var grnpallette = [
   "#64b15d",
   "#8cc487",
 ];
-var ppcpallette = [
+var ppcpalette = [
   "#391a57",
   "#4b2273",
   "#693199",
@@ -721,7 +721,7 @@ var ppcpallette = [
   "#a767cc",
   "#c08ed9",
 ];
-var blocpallette = [
+var blocpalette = [
   "#1a5257",
   "#226d73",
   "#319399",
