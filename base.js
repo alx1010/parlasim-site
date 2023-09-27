@@ -182,7 +182,7 @@ function jurisClicks() {
   for (let x = 0; x < juris.length; x++) {
     var jurisid = "seat" + juris[x];
     eval(
-      'MAP338.getElementById("' +
+      'SVGMAP.getElementById("' +
         jurisid +
         '").addEventListener(' +
         c +
@@ -197,7 +197,7 @@ function jurisClicks() {
 
 function colourmap() {
   function setSVGColour(id, colour) {
-    MAP338.getElementById(id).style.fill = colour;
+    SVGMAP.getElementById(id).style.fill = colour;
   }
 
   // testing purposes
@@ -406,16 +406,16 @@ modeFourButton.addEventListener("click", () => {
 
 // Does initial setup once all content has loaded
 
-var MAP338;
+var SVGMAP;
 
 document.addEventListener("DOMContentLoaded", function () {
   // get first <object>
-  const objTag = document.querySelector(".map338");
+  const objTag = document.querySelector(".svgmap");
 
   // wait for SVG to load
   objTag.addEventListener("load", () => {
     // reference to SVG document
-    MAP338 = objTag.getSVGDocument();
+    SVGMAP = objTag.getSVGDocument();
 
     SeatResults();
 
