@@ -180,7 +180,7 @@ function jurisClicks() {
 
   var c = "'click'";
   for (let x = 0; x < juris.length; x++) {
-    var jurisid = "seat" + juris[x];
+    var jurisid = juris[x];
     eval(
       'SVGMAP.getElementById("' +
         jurisid +
@@ -199,7 +199,7 @@ function colourmap() {
   function setSVGColour(id, colour) {
     SVGMAP.getElementById(id).style.fill = colour;
   }
-
+  
   // testing purposes
   var jtc = juris.length; // juris to count
   var jts = 0; // juris to skip
@@ -207,10 +207,10 @@ function colourmap() {
   if (mapMode == 0) {
     // Colours the map based on the margin of victory, default
     for (let x = jts; x < jtc; x++) {
-      //console.log(juris[x])
+      console.log(juris[x])
       if (WinningDiff[x] >= 0.25) {
         eval(
-          'setSVGColour("seat' +
+          'setSVGColour("' +
             juris[x] +
             '", ' +
             partyabbrv[SeatWinner[x]] +
@@ -218,7 +218,7 @@ function colourmap() {
         );
       } else if (WinningDiff[x] < 0.25 && WinningDiff[x] >= 0.2) {
         eval(
-          'setSVGColour("seat' +
+          'setSVGColour("' +
             juris[x] +
             '", ' +
             partyabbrv[SeatWinner[x]] +
@@ -226,7 +226,7 @@ function colourmap() {
         );
       } else if (WinningDiff[x] < 0.2 && WinningDiff[x] >= 0.15) {
         eval(
-          'setSVGColour("seat' +
+          'setSVGColour("' +
             juris[x] +
             '", ' +
             partyabbrv[SeatWinner[x]] +
@@ -234,7 +234,7 @@ function colourmap() {
         );
       } else if (WinningDiff[x] < 0.15 && WinningDiff[x] >= 0.1) {
         eval(
-          'setSVGColour("seat' +
+          'setSVGColour("' +
             juris[x] +
             '", ' +
             partyabbrv[SeatWinner[x]] +
@@ -242,7 +242,7 @@ function colourmap() {
         );
       } else if (WinningDiff[x] < 0.1 && WinningDiff[x] >= 0.05) {
         eval(
-          'setSVGColour("seat' +
+          'setSVGColour("' +
             juris[x] +
             '", ' +
             partyabbrv[SeatWinner[x]] +
@@ -250,7 +250,7 @@ function colourmap() {
         );
       } else if (WinningDiff[x] < 0.05) {
         eval(
-          'setSVGColour("seat' +
+          'setSVGColour("' +
             juris[x] +
             '", ' +
             partyabbrv[SeatWinner[x]] +
@@ -267,7 +267,7 @@ function colourmap() {
       //console.log(juris[x])
       if (WinningPerc[x] >= 0.7) {
         eval(
-          'setSVGColour("seat' +
+          'setSVGColour("' +
             juris[x] +
             '", ' +
             partyabbrv[SeatWinner[x]] +
@@ -275,7 +275,7 @@ function colourmap() {
         );
       } else if (WinningPerc[x] < 0.7 && WinningPerc[x] >= 0.6) {
         eval(
-          'setSVGColour("seat' +
+          'setSVGColour("' +
             juris[x] +
             '", ' +
             partyabbrv[SeatWinner[x]] +
@@ -283,7 +283,7 @@ function colourmap() {
         );
       } else if (WinningPerc[x] < 0.6 && WinningPerc[x] >= 0.5) {
         eval(
-          'setSVGColour("seat' +
+          'setSVGColour("' +
             juris[x] +
             '", ' +
             partyabbrv[SeatWinner[x]] +
@@ -291,7 +291,7 @@ function colourmap() {
         );
       } else if (WinningPerc[x] < 0.5 && WinningPerc[x] >= 0.4) {
         eval(
-          'setSVGColour("seat' +
+          'setSVGColour("' +
             juris[x] +
             '", ' +
             partyabbrv[SeatWinner[x]] +
@@ -299,7 +299,7 @@ function colourmap() {
         );
       } else if (WinningPerc[x] < 0.4 && WinningPerc[x] >= 0.3) {
         eval(
-          'setSVGColour("seat' +
+          'setSVGColour("' +
             juris[x] +
             '", ' +
             partyabbrv[SeatWinner[x]] +
@@ -307,7 +307,7 @@ function colourmap() {
         );
       } else if (WinningPerc[x] < 0.3) {
         eval(
-          'setSVGColour("seat' +
+          'setSVGColour("' +
             juris[x] +
             '", ' +
             partyabbrv[SeatWinner[x]] +
@@ -323,7 +323,7 @@ function colourmap() {
     for (let x = jts; x < jtc; x++) {
       if (SeatFlip[x] == 999) {
         eval(
-          'setSVGColour("seat' +
+          'setSVGColour("' +
             juris[x] +
             '", ' +
             partyabbrv[SeatWinner[x]] +
@@ -331,7 +331,7 @@ function colourmap() {
         );
       } else if (SeatFlip[x] != 999) {
         eval(
-          'setSVGColour("seat' +
+          'setSVGColour("' +
             juris[x] +
             '", ' +
             partyabbrv[SeatWinner[x]] +
@@ -345,7 +345,7 @@ function colourmap() {
     // Colours the map solid colours
     for (let x = jts; x < jtc; x++) {
       eval(
-        'setSVGColour("seat' +
+        'setSVGColour("' +
           juris[x] +
           '", ' +
           partyabbrv[SeatWinner[x]] +

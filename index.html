@@ -1,17 +1,30 @@
 <html>
     <head>
         <style>
-            #buttons {
+            .buttonsa {
                 position: absolute;
                 left: 35%;
                 height: 100%;
                 width: 100%;
             }
-            button {
+            .buttonsb {
+                position: absolute;
+                left: 35%;
+                height: 100%;
+                width: 100%;
+            }
+            .buttonsa button {
                 height: 10%;
                 width: 15%;
                 font-size: 175%;
-                background-color: rgb(55, 55, 126);
+                background-color: rgb(19, 31, 85);
+                color: beige;
+            }
+            .buttonsb button {
+                height: 10%;
+                width: 15%;
+                font-size: 175%;
+                background-color: rgb(85, 19, 19);
                 color: beige;
             }
             p {
@@ -23,9 +36,13 @@
 
     <body>
         <p>Canada Map Simulator</p>
-        <div id="buttons">
-            <a href="canMapDis.html"><button>National Vote</button></a>
-            <a href="canMapDisRegional.html"><button>Regional Vote</button></a>
+        <div class="buttonsa">
+            <a href="canMapDis.html"><button>National Vote 343</button></a>
+            <a href="canMapDisRegional.html"><button>Regional Vote 343</button></a>
+        </div>
+        <div class="buttonsb" style="top: 22%;">
+            <a href="oldMapDis.html"><button>National Vote 338</button></a>
+            <a href="oldMapDisRegional.html"><button>Regional Vote 338</button></a>
         </div>
     </body>
 
