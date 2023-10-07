@@ -54,3 +54,7 @@
 #jurisTable table {
   width: 100%; font-size: 100%;
 }
+
+#maj {
+  font-size: 80%; font-weight: bold;
+}

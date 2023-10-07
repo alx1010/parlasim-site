@@ -17,7 +17,7 @@
 .buttons {
   position: absolute;
   z-index: 2;
-  top:20%
+  top:25%
 }
 
 #myTable td {
@@ -33,10 +33,10 @@
 
 .svgmap {
   position: absolute;
-  left: 24%;
-  top: -17%;
+  left: 26%;
+  top: -10%;
   width: 80%;
-  height: 117%;
+  height: 110%;
 }
 
 .map {
@@ -55,7 +55,10 @@
   width: 100%; font-size: 100%;
 }
  
-
 #myTableInputs input {
   width: 40px;
+}
+
+#maj {
+  font-size: 80%; font-weight: bold;
 }
