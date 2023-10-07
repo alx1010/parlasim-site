@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <title>Canada Map</title>
+        <link rel="stylesheet" href="sitestyle.css">
+        <link rel="stylesheet" href="canadastyle.css">
+    </head>
+
+    <body scroll="no" style="overflow: hidden">
+
+      <div id="myTable">
+        <table>
+          <tr style="height: 30%;">
+            <th class="lpcheader" id = "lpcVotes"></th>
+            <th class="cpcheader" id = "cpcVotes"></th>
+            <th class="ndpheader" id = "ndpVotes"></th>
+            <th class="grnheader" id = "grnVotes"></th>
+            <th class="ppcheader" id = "ppcVotes"></th>
+            <th class="blocheader" id = "blocVotes"></th>
+            <th id = "sumcheck" style="font-size: 28;"></th>
+          </tr>
+          <tr>
+            <td class="lpc"><button id = "lpcup">+%</button></td>
+            <td class="cpc"><button id = "cpcup">+%</button></td>
+            <td class="ndp"><button id = "ndpup">+%</button></td>
+            <td class="grn"><button id = "grnup">+%</button></td>
+            <td class="ppc"><button id = "ppcup">+%</button></td>
+            <td class="bloc"><button id = "blocup">+%</button></td>   
+          </tr>
+          <tr>
+            <td class="lpc"><button id = "lpcdown">-%</button></td>
+            <td class="cpc"><button id = "cpcdown">-%</button></td>
+            <td class="ndp"><button id = "ndpdown">-%</button></td>
+            <td class="grn"><button id = "grndown">-%</button></td>
+            <td class="ppc"><button id = "ppcdown">-%</button></td>
+            <td class="bloc"><button id = "blocdown">-%</button></td>   
+          </tr>
+          <tr style="font-size: 80%; height: 30%;">
+            <td class="lpc" id = "lpcSeats"></td>
+            <td class="cpc" id = "cpcSeats"></td>
+            <td class="ndp" id = "ndpSeats"></td>
+            <td class="grn" id = "grnSeats"></td>
+            <td class="ppc" id = "ppcSeats"></td>
+            <td class="bloc" id = "blocSeats"></td>
+            <td>172 needed for Majority</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class = "buttons">
+        <br><table>
+          <tr>
+            <td><button class ="sim" style="height: 100%; width: 100%; font-size: 80%; font-weight: bold;"> Sim </button></td>
+            <td><p style="font-weight: bold;">| Modes:</p></td>
+            <td><button class ="modeone"> Margin </button></td>
+            <td><button class ="modetwo"> Winning % </button></td>
+            <td><button class ="modethree"> Flips </button></td>
+            <td><button class ="modefour"> Solid Colour </button></td>
+          </tr>
+        </table>
+      </div>
+
+      <div id="jurisTable">
+        <p id="jurisName" style="font-size: 140%; font-weight: bold;"> Juris Name</p>
+        <table>
+          <tr>
+            <td>LPC</td>
+            <td>CPC</td>
+            <td>NDP</td>
+            <td>GRN</td>
+            <td>PPC</td>
+            <td>Bloc</td>
+          </tr>
+          <tr">
+            <td id="lpcJuris">~~%</td>
+            <td id="cpcJuris">~~%</td>
+            <td id="ndpJuris">~~%</td>
+            <td id="grnJuris">~~%</td>
+            <td id="ppcJuris">~~%</td>
+            <td id="blocJuris">~~%</td>
+          </tr>
+        </table>
+        <p id="jurisMargin" style="font-size: 120%">Margin: ~~%</p>
+      </div>
+
+      <script type="text/javascript" src="canada.js"></script>
+      <script type="text/javascript" src="base.js"></script>
+      <script type="text/javascript" src="nvbuttons.js"></script>
+      <div class="map">
+        <object type="image/svg+xml" data="can343.svg" class="svgmap"></object>
+      </div>
+    </body>  
+</html>
