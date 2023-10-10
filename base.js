@@ -180,7 +180,7 @@ function jurisClicks() {
 
   var c = "'click'";
   for (let x = 0; x < juris.length; x++) {
-    var jurisid = juris[x];
+    var jurisid = idprefix + juris[x];
     eval(
       'SVGMAP.getElementById("' +
         jurisid +
@@ -211,7 +211,7 @@ function colourmap() {
       if (WinningDiff[x] >= 0.25) {
         eval(
           'setSVGColour("' +
-            juris[x] +
+            idprefix+ juris[x] +
             '", ' +
             partyabbrv[SeatWinner[x]] +
             "palette[0])"
@@ -219,7 +219,7 @@ function colourmap() {
       } else if (WinningDiff[x] < 0.25 && WinningDiff[x] >= 0.2) {
         eval(
           'setSVGColour("' +
-            juris[x] +
+            idprefix + juris[x] +
             '", ' +
             partyabbrv[SeatWinner[x]] +
             "palette[1])"
@@ -227,7 +227,7 @@ function colourmap() {
       } else if (WinningDiff[x] < 0.2 && WinningDiff[x] >= 0.15) {
         eval(
           'setSVGColour("' +
-            juris[x] +
+            idprefix + juris[x] +
             '", ' +
             partyabbrv[SeatWinner[x]] +
             "palette[2])"
@@ -235,7 +235,7 @@ function colourmap() {
       } else if (WinningDiff[x] < 0.15 && WinningDiff[x] >= 0.1) {
         eval(
           'setSVGColour("' +
-            juris[x] +
+            idprefix + juris[x] +
             '", ' +
             partyabbrv[SeatWinner[x]] +
             "palette[3])"
@@ -243,7 +243,7 @@ function colourmap() {
       } else if (WinningDiff[x] < 0.1 && WinningDiff[x] >= 0.05) {
         eval(
           'setSVGColour("' +
-            juris[x] +
+            idprefix + juris[x] +
             '", ' +
             partyabbrv[SeatWinner[x]] +
             "palette[4])"
@@ -251,7 +251,7 @@ function colourmap() {
       } else if (WinningDiff[x] < 0.05) {
         eval(
           'setSVGColour("' +
-            juris[x] +
+            idprefix + juris[x] +
             '", ' +
             partyabbrv[SeatWinner[x]] +
             "palette[5])"
@@ -268,7 +268,7 @@ function colourmap() {
       if (WinningPerc[x] >= 0.7) {
         eval(
           'setSVGColour("' +
-            juris[x] +
+            idprefix + juris[x] +
             '", ' +
             partyabbrv[SeatWinner[x]] +
             "palette[0])"
@@ -276,7 +276,7 @@ function colourmap() {
       } else if (WinningPerc[x] < 0.7 && WinningPerc[x] >= 0.6) {
         eval(
           'setSVGColour("' +
-            juris[x] +
+            idprefix + juris[x] +
             '", ' +
             partyabbrv[SeatWinner[x]] +
             "palette[1])"
@@ -284,7 +284,7 @@ function colourmap() {
       } else if (WinningPerc[x] < 0.6 && WinningPerc[x] >= 0.5) {
         eval(
           'setSVGColour("' +
-            juris[x] +
+            idprefix + juris[x] +
             '", ' +
             partyabbrv[SeatWinner[x]] +
             "palette[2])"
@@ -292,7 +292,7 @@ function colourmap() {
       } else if (WinningPerc[x] < 0.5 && WinningPerc[x] >= 0.4) {
         eval(
           'setSVGColour("' +
-            juris[x] +
+            idprefix + juris[x] +
             '", ' +
             partyabbrv[SeatWinner[x]] +
             "palette[3])"
@@ -300,7 +300,7 @@ function colourmap() {
       } else if (WinningPerc[x] < 0.4 && WinningPerc[x] >= 0.3) {
         eval(
           'setSVGColour("' +
-            juris[x] +
+            idprefix + juris[x] +
             '", ' +
             partyabbrv[SeatWinner[x]] +
             "palette[4])"
@@ -308,7 +308,7 @@ function colourmap() {
       } else if (WinningPerc[x] < 0.3) {
         eval(
           'setSVGColour("' +
-            juris[x] +
+            idprefix + juris[x] +
             '", ' +
             partyabbrv[SeatWinner[x]] +
             "palette[5])"
@@ -324,7 +324,7 @@ function colourmap() {
       if (SeatFlip[x] == 999) {
         eval(
           'setSVGColour("' +
-            juris[x] +
+            idprefix + juris[x] +
             '", ' +
             partyabbrv[SeatWinner[x]] +
             "palette[5])"
@@ -332,7 +332,7 @@ function colourmap() {
       } else if (SeatFlip[x] != 999) {
         eval(
           'setSVGColour("' +
-            juris[x] +
+            idprefix + juris[x] +
             '", ' +
             partyabbrv[SeatWinner[x]] +
             "palette[1])"
