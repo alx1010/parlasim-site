@@ -1,7 +1,8 @@
 <html>
     <head>
         <title>Canada Map</title>
-        <link rel="stylesheet" href="sitestyle.css">
+        <link rel='stylesheet' media='screen and (min-width: 1348px)' href='sitestyleX1368.css' />
+        <link rel='stylesheet' media='screen and (min-width: 1900px)' href='sitestyleX1920.css' />
         <link rel="stylesheet" href="../canadastyle.css">
     </head>
 
@@ -49,7 +50,7 @@
             <td class="grn" id = "grnSeats"></td>
             <td class="ppc" id = "ppcSeats"></td>
             <td class="bloc" id = "blocSeats"></td>
-            <td>170 needed for Majority</td>
+            <td id="maj">172 needed for Majority</td>
           </tr>
         </table>
       </div>
@@ -94,8 +95,8 @@
       <script type="text/javascript" src="data.js"></script>
       <script type="text/javascript" src="../base.js"></script>
       <script type="text/javascript" src="../nvbuttons.js"></script>
-
-      <object type="image/svg+xml" data="can338.svg" class="svgmap"></object>
-
+      <div class="map">
+        <object type="image/svg+xml" data="can338.svg" class="svgmap"></object>
+      </div>
     </body>  
 </html>

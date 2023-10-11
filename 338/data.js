@@ -880,3 +880,8 @@ for(let y = 0; y < 6; y++){
 }
 
 idprefix = "seat"
+
+// Codes for regional swing
+
+var codes = ["ATL", "QC", "ON", "PR", "AB", "BC"];
+var codesJuris = [32, 78, 121, 28, 34, 42];

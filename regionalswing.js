@@ -1,9 +1,3 @@
-// Codes for regional swing
-
-var codes = ["BC", "AB", "PR", "ON", "QC", "ATL"];
-var codesJuris = [32, 78, 121, 28, 34, 42];
-var codesJuris = [43, 37, 28, 122, 78, 32];
-
 for (let x = 0; x < codes.length; x++) {
   eval("var " + codes[x] + "DataInit = 0");
   eval("var " + codes[x] + "DataRawInit = 0");
@@ -56,7 +50,7 @@ function Swinger() {
 
   initNationalVote();
 
-  for (let x = 340; x < 343; x++) {
+  for (let x = (juris.length-3); x < juris.length; x++) {
     for (let y = 0; y < partyabbrv.length; y++) {
       eval(
         partyabbrv[y] +

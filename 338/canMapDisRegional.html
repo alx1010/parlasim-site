@@ -1,15 +1,9 @@
 <html>
     <head>
         <title>Canada Map</title>
-        <link rel="stylesheet" href="sitestyle.css">
+        <link rel='stylesheet' media='screen and (min-width: 1348px)' href='sitestyleX1368.css' />
+        <link rel='stylesheet' media='screen and (min-width: 1900px)' href='sitestyleX1920.css' />
         <link rel="stylesheet" href="../canadastyle.css">
-        <style>
-          #myTable table {
-            width: 40%;
-            height: 10%;
-            font-size: 150%;
-          }
-        </style>
     </head>
 
     <body scroll="no" style="overflow: hidden">
@@ -40,12 +34,12 @@
             <td class="grn" id = "grnSeats"></td>
             <td class="ppc" id = "ppcSeats"></td>
             <td class="bloc" id = "blocSeats"></td>
-            <td>170 needed for Majority</td>
+            <td id="maj">172 needed for Majority</td>
           </tr>
         </table>
       </div>
 
-      <div class = "buttons">
+      <div class = "buttons" style="top: 17%; z-index: 3;">
         <br><table>
           <tr>
             <td><button class ="sim" style="height: 100%; width: 100%; font-size: 80%; font-weight: bold;"> Sim </button></td>
@@ -81,10 +75,10 @@
         <p id="jurisMargin" style="font-size: 120%">Margin: ~~%</p>
       </div>
 
-      <div id="myTableInputs">
+      <div id="myTableInputs" style="position: fixed; z-index: 2; top: 20%;">
 
-        <br><br><table style="width: 20%; height: 20%; font-size: 16px;">
-          <tr style="font-size: 22px">
+        <br><br><table style="width:100%; height: 20%; font-size: 100%;">
+          <tr style="font-size: 150%">
             <td></td>
             <td>LPC</td>
             <td>CPC</td>

@@ -7,9 +7,17 @@
 }
 
 #myTable table {
+  position: absolute;
+  z-index: 2;
   width: 40%;
-  height: 20%;
-  font-size: 150%;
+  height: 10%;
+  font-size: 120%;
+}
+
+.buttons {
+  position: absolute;
+  z-index: 2;
+  top:25%
 }
 
 #myTable td {
@@ -25,20 +33,32 @@
 
 .svgmap {
   position: absolute;
-  left: 40%;
-  top: 0%;
-  width: 60%;
-  height: 100%;
+  left: 26%;
+  top: -10%;
+  width: 80%;
+  height: 110%;
 }
+
+.map {
+  z-index: 1;
+} 
 
 #jurisTable {
   position: absolute;
-  left: 72.5%;
-  top: 0%;
+  left: 50%;
+  top: -3%;
   width: 25%;
-  font-size: 120%;
+  font-size: 100%;
 }
 
 #jurisTable table {
   width: 100%; font-size: 100%;
+}
+ 
+#myTableInputs input {
+  width: 40px;
+}
+
+#maj {
+  font-size: 80%; font-weight: bold;
 }
