@@ -162,6 +162,7 @@ function gatherCodesResults() {
       var elementid = partyabbrv[y] + codes[x];
       eval("value = " + elementid + ".value");
       value = parseInt(value);
+      eval(elementid + ".value = value.toString() + '%'")
       value = twoDecRound(value / 100);
       eval(codes[x] + "Data[y] = value");
     }
