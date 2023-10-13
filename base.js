@@ -427,6 +427,12 @@ document.addEventListener("DOMContentLoaded", function () {
       initelec[x] = nationalvote[x];
     }
 
+    // Tells the user how many seats are needed for a majority
+
+    const lblMaj = document.getElementById("maj")
+    
+    lblMaj.innerText = (Math.floor(juris.length/2) + 1) + " needed for majority"
+
     colourmap();
     setTextVotes();
     setTextSeats();
