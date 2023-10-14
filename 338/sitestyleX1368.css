@@ -33,10 +33,10 @@
 
 .svgmap {
   position: absolute;
-  left: 26%;
-  top: -10%;
+  left: 30%;
+  top: 0%;
   width: 80%;
-  height: 110%;
+  height: 100%;
 }
 
 .map {
@@ -45,7 +45,7 @@
 
 #jurisTable {
   position: absolute;
-  left: 50%;
+  left: 72%;
   top: -3%;
   width: 25%;
   font-size: 100%;
