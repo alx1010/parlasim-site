@@ -9,6 +9,21 @@ for(let x = 0; x < partyabbrv.length; x++){eval('var ' + partyabbrv[x] + 'sv = [
 var WinningDiff = [];
 var WinningPerc = [];
 
+// Dynamic site styling for result table based on colour palette
+
+for(let x = 0; x < partyabbrv.length; x++){
+  var s = document.getElementsByClassName(partyabbrv[x])
+  for(let y = 0; y < s.length; y++){
+    eval("s[y].style.background = " + partyabbrv[x] + "palette[4]")
+    s[y].style.color = "white"
+  }
+  var s = document.getElementsByClassName(partyabbrv[x] + "header")
+  for(let y = 0; y < s.length; y++){
+    eval("s[y].style.background = " + partyabbrv[x] + "palette[2]")
+    s[y].style.color = "white"
+  }
+}
+
 // Margin is default map mode
 var mapMode = 0;
 
@@ -207,7 +222,6 @@ function colourmap() {
   if (mapMode == 0) {
     // Colours the map based on the margin of victory, default
     for (let x = jts; x < jtc; x++) {
-      console.log(juris[x])
       if (WinningDiff[x] >= 0.25) {
         eval(
           'setSVGColour("' +

@@ -870,7 +870,7 @@ var othraw = [
   
 var othrawinit = []
   
-for(let y = 0; y < 6; y++){
+for(let y = 0; y < partyabbrv.length; y++){
     eval('var ' + partyabbrv[y] + 'rawinit = []')
     for(let x = 0; x < juris.length; x++){
       eval(partyabbrv[y] + 'rawinit[x] = ' + partyabbrv[y] + 'raw[x]')
