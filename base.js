@@ -360,7 +360,7 @@ function colourmap() {
     for (let x = jts; x < jtc; x++) {
       eval(
         'setSVGColour("' +
-          juris[x] +
+          idprefix + juris[x] +
           '", ' +
           partyabbrv[SeatWinner[x]] +
           "palette[3])"
@@ -377,13 +377,6 @@ function setTextVotes() {
     eval(partyabbrv[x] + "OutputVotes.innerText = p");
   }
   sumCheck.innerText = Math.round(sad(nationalvote, 0) * 100) + "%";
-}
-
-function setTextSeats() {
-  for (let x = 0; x < partyabbrv.length; x++) {
-    var s = SeatCount[x];
-    eval(partyabbrv[x] + 'OutputSeats.innerText = s + " seats"');
-  }
 }
 
 for(let x = 0; x < partyabbrv.length; x++){
@@ -440,19 +433,19 @@ document.addEventListener("DOMContentLoaded", function () {
     for (let x = 0; x < partyabbrv.length; x++) {
       initelec[x] = nationalvote[x];
     }
-
-    // Tells the user how many seats are needed for a majority
-
-    const lblMaj = document.getElementById("maj")
     
-    lblMaj.innerText = (Math.floor(juris.length/2) + 1) + " needed for majority"
-
     colourmap();
     setTextVotes();
     setTextSeats();
     jurisClicks();
   });
 });
+
+// Tells the user how many seats are needed for a majority
+
+const lblMaj = document.getElementById("maj")
+    
+lblMaj.innerText = (Math.floor(juris.length/2) + 1) + " needed for majority"
 
 simButton.addEventListener("click", () => {
   Swinger();

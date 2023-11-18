@@ -48,3 +48,10 @@ var blocpalette = [
   "#67c6cc",
   "#8ed4d9",
 ];
+
+function setTextSeats() {
+  for (let x = 0; x < partyabbrv.length; x++) {
+    var s = SeatCount[x];
+    eval(partyabbrv[x] + 'OutputSeats.innerText = s + " seats"');
+  }
+}

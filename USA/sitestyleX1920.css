@@ -7,7 +7,7 @@
 }
 
 #myTable table {
-  position: fixed;
+  position: absolute;
   z-index: 2;
   width: 40%;
   height: 15%;
@@ -15,7 +15,7 @@
 }
 
 .buttons {
-  position: fixed;
+  position: absolute;
   z-index: 2;
   top:20%
 }
@@ -33,10 +33,10 @@
 
 .svgmap {
   position: absolute;
-  left: 20%;
-  top: -8.5%;
+  left: 25%;
+  top: 20%;
   width: 80%;
-  height: 117%;
+  height: 80%;
 }
 
 .map {
