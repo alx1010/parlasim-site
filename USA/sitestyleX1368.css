@@ -31,12 +31,19 @@
   text-align: center;
 }
 
-.svgmap {
+.svgmap, .svgmap2 {
   position: absolute;
-  left: 30%;
-  top: 3.2%;
-  width: 70%;
-  height: 100%;
+  width: 60%;
+  height: 60%;
+  top: 35%;
+}
+
+#map1 {
+  left: -5%;
+}
+
+#map2 {
+  left: 45%;
 }
 
 .map {
