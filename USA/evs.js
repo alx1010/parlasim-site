@@ -1,49 +1,135 @@
 var totalevs = [0]
-var statewinner = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+var StateWinner = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+var WinningDiffState = []
+var WinningPercState = []
+
+function setSVGColourStates(id, colour) {
+  STATEMAP.getElementById(id).style.fill = colour;
+}
+
+for(let y = 0; y < partyabbrv.length; y++){
+  eval("var " + partyabbrv[y] + "rawStates = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]")
+  eval("var " + partyabbrv[y] + "voteStates = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]")
+  var othrawStates = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+  totalevs[y] = 0
+}
 
 function CalculateEVs() {
-  var statemax = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-  var statesum = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-  
   for(let y = 0; y < partyabbrv.length; y++){
-    eval("var " + partyabbrv[y] + "rawStates = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]")
-    eval("var " + partyabbrv[y] + "voteStates = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]")
-    var othrawStates = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+    eval(partyabbrv[y] + "rawStates = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]")
+    eval(partyabbrv[y] + "voteStates = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]")
+    othrawStates = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     totalevs[y] = 0
   }
+  var statesum = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
   var sts = 0
   for(let x = 0; x < states.length; x++){
+    var w = 0
+    var sw = 0
     for(let y = 0; y < partyabbrv.length; y++){
       for(let z = sts; z < (statesJuris[x] + sts); z++){
         eval(partyabbrv[y] + "rawStates[x] += " + partyabbrv[y] + "raw[z]")
       }
       eval(partyabbrv[y] + "rawStates[x] = Math.round(" + partyabbrv[y] + "rawStates[x])")
       eval("statesum[x] += " + partyabbrv[y] + "rawStates[x]")
-      eval("if(" + partyabbrv[y] + "rawStates[x] > statemax[x]){statemax[x] = " + partyabbrv[y] + "rawStates[x]}")
+      eval("if(" + partyabbrv[y] + "rawStates[x] > w){w = " + partyabbrv[y] + "rawStates[x]}")
     }
-    
+
+    // Finding the max and winner
+
     for(let y = 0; y < partyabbrv.length; y++){
-      eval("if(" + partyabbrv[y] + "rawStates[x] == statemax[x]){totalevs[y] += statesevs[x]; statewinner[x] = y}")
+      eval("if(" + partyabbrv[y] + "rawStates[x] == w){totalevs[y] += statesevs[x]; StateWinner[x] = y;}")
       eval(partyabbrv[y] + "voteStates[x] = fourDecRound(" + partyabbrv[y] + "rawStates[x] / statesum[x])")
     }
 
-    console.log("GOP VOTE RAW " + states[x] + ": " + goprawStates[x])
-    console.log("DEM VOTE RAW " + states[x] + ": "+ demrawStates[x])
-    console.log(states[x] + " VOTE SUM: " + statesum[x])
-    console.log("GOP VOTE % " + states[x] + ": " + twoDecRound(gopvoteStates[x] * 100))
-    console.log("DEM VOTE % " + states[x] + ": "+ twoDecRound(demvoteStates[x] * 100))
-    console.log("")
+    // Finding the second max
+  
+    for(let y = 0; y < partyabbrv.length; y++){
+      if(eval(partyabbrv[y] + 'rawStates[x]') > sw && eval(partyabbrv[y] + 'rawStates[x]') != w){
+          sw = eval(partyabbrv[y] + 'rawStates[x]')
+      }
+    }
+
+    w = fourDecRound(w/statesum[x])
+    sw = fourDecRound(sw/statesum[x])
+    WinningDiffState[x] = fourDecRound(w - sw)
+    WinningPercState[x] = w
 
     sts += statesJuris[x]
   }
-  console.log(statewinner)
+
+  function colourstates(){
+    if (mapMode == 1) {
+      var top = 0.25
+      var decrement = 0.05
+      var bottom = (top-(decrement*goppalette.length))
+      // Colours the map based on the margin of victory, default
+      for (let x = 0; x < states.length; x++) {
+        eval('setSVGColourStates("' + states[x] + '", ' + partyabbrv[StateWinner[x]] + "palette[Math.ceil((top-WinningDiffState[x])/decrement)])")
+        if(WinningDiffState[x]>top){eval('setSVGColourStates("' + states[x] + '", ' + partyabbrv[StateWinner[x]] + "palette[0])")}
+        if(WinningDiffState[x]<bottom){eval('setSVGColourStates("' + states[x] + '", ' + partyabbrv[StateWinner[x]] + "palette[5])")}
+      }
+    }
+
+    if (mapMode == 2) {
+      var top = 0.70
+      var decrement = 0.10
+      var bottom = (top-(decrement*goppalette.length))
+      // Colours the map based on the margin of victory, default
+      for (let x = 0; x < states.length; x++) {
+        eval('setSVGColourStates("' + states[x] + '", ' + partyabbrv[StateWinner[x]] + "palette[Math.ceil((top-WinningPercState[x])/decrement)])");
+        if(WinningPercState[x]>top){eval('setSVGColourStates("' + states[x] + '", ' + partyabbrv[StateWinner[x]] + "palette[0])")}
+        if(WinningPercState[x]<bottom){eval('setSVGColourStates("' + states[x] + '", ' + partyabbrv[StateWinner[x]] + "palette[5])")}
+      }
+    }
+  
+    if (mapMode == 4) {
+      // Colours the map solid colours
+      for (let x = 0; x < states.length; x++) {
+        eval(
+          'setSVGColourStates("' +
+            states[x] +
+            '", ' +
+            partyabbrv[StateWinner[x]] +
+            "palette[3])"
+        );
+      }
+    }
+  }
+
+  colourstates()
 }
 
-function setTextSeats() {
-  for (let x = 0; x < partyabbrv.length; x++) {
-    var s = 0;
-    eval(partyabbrv[x] + 'OutputSeats.innerText = s + " EVs"');
+function stateClicks() {
+  const jurisName = document.getElementById("jurisName");
+  const jurisMargin = document.getElementById("jurisMargin");
+  
+  for(let x = 0; x < partyabbrv.length; x++){
+      eval('var ' + partyabbrv[x] + 'Juris = document.getElementById("' + partyabbrv[x] + 'Juris")')
   }
+
+function onJurisClick(x) {
+  jurisName.innerText = states[x].toUpperCase();
+  jurisMargin.innerText = "Margin: " + fourDecRound(WinningDiffState[x] * 100) + "% => " + partyabbrv[StateWinner[x]].toUpperCase();
+  for(let y = 0; y < partyabbrv.length; y++){
+      eval(partyabbrv[y] + 'Juris.innerText = fourDecRound(' + partyabbrv[y] + 'voteStates[x] * 100) + "%"')
+  }
+  clicked = x;
+}
+
+var c = "'click'";
+for (let x = 0; x < states.length; x++) {
+  eval(
+    'STATEMAP.getElementById("' +
+      states[x] +
+      '").addEventListener(' +
+      c +
+      " , () => {onJurisClick(x)})"
+  );
+}
+
+onJurisClick(clicked);
 }
 
 function setTextSeatsEVs() {
@@ -53,42 +139,45 @@ function setTextSeatsEVs() {
   }
 }
 
-function toggleStates(){
-  function setSVGColour(id, colour) {
-    SVGMAP.getElementById(id).style.fill = colour;
-  }
-
-  var sts = 0; // juris to skip
-
-   for(let x = 0; x < states.length; x++){
-     for(let z = sts; z < (statesJuris[x] + sts); z++){
-       eval(
-         'setSVGColour("' + idprefix + juris[z] + '", ' + partyabbrv[statewinner[x]] + "palette[3])"
-       );
-     }0
-     sts += statesJuris[x]
-   }
-}
+var STATEMAP 
 
 document.addEventListener("DOMContentLoaded", function () {
-  const lblMaj = document.getElementById("maj")
-  lblMaj.innerText = "270 EVs needed to win"
+  // get first <object>
+  const objTag = document.querySelector(".svgmap2");
 
-  CalculateEVs()
-  setTextSeats()
+  // wait for SVG to load
+  objTag.addEventListener("load", () => {
+    // reference to SVG document
+    STATEMAP = objTag.getSVGDocument();
+
+    CalculateEVs()
+    setTextSeatsEVs()
+    stateClicks()
+  });
+
+  const lblMaj = document.getElementById("maj")
+  lblMaj.innerText = "270 EVs needed to win" 
 })
 
 simButton.addEventListener("click", () => {
   CalculateEVs()
   setTextSeatsEVs()
-  if(t==1){toggleStates()}
+  stateClicks()
 })
 
-const toggleStatesButton = document.getElementById("toggleStates")
-
-var t = 0
-
-toggleStatesButton.addEventListener("click", () => {
-  toggleStates()
-  if(t==1){t=0}else{t=1}
-})
+modeOneButton.addEventListener("click", () => {
+  mapMode = 1;
+  CalculateEVs();
+});
+modeTwoButton.addEventListener("click", () => {
+  mapMode = 2;
+  CalculateEVs();
+});
+modeThreeButton.addEventListener("click", () => {
+  mapMode = 3;
+  CalculateEVs();
+});
+modeFourButton.addEventListener("click", () => {
+  mapMode = 4;
+  CalculateEVs();
+});
