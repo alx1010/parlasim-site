@@ -9,8 +9,23 @@ for(let x = 0; x < partyabbrv.length; x++){eval('var ' + partyabbrv[x] + 'sv = [
 var WinningDiff = [];
 var WinningPerc = [];
 
+// Dynamic site styling for result table based on colour palette
+
+for(let x = 0; x < partyabbrv.length; x++){
+  var s = document.getElementsByClassName(partyabbrv[x])
+  for(let y = 0; y < s.length; y++){
+    eval("s[y].style.background = " + partyabbrv[x] + "palette[4]")
+    s[y].style.color = "white"
+  }
+  var s = document.getElementsByClassName(partyabbrv[x] + "header")
+  for(let y = 0; y < s.length; y++){
+    eval("s[y].style.background = " + partyabbrv[x] + "palette[2]")
+    s[y].style.color = "white"
+  }
+}
+
 // Margin is default map mode
-var mapMode = 0;
+var mapMode = 1;
 
 function twoDecRound(num) {
   return Math.round(num * 1e2) / 1e2;
@@ -204,10 +219,9 @@ function colourmap() {
   var jtc = juris.length; // juris to count
   var jts = 0; // juris to skip
 
-  if (mapMode == 0) {
+  if (mapMode == 1) {
     // Colours the map based on the margin of victory, default
     for (let x = jts; x < jtc; x++) {
-      console.log(juris[x])
       if (WinningDiff[x] >= 0.25) {
         eval(
           'setSVGColour("' +
@@ -261,7 +275,7 @@ function colourmap() {
     }
   }
 
-  if (mapMode == 1) {
+  if (mapMode == 2) {
     // Colours the map based on the percentage of vote recieved by the winner
     for (let x = jts; x < jtc; x++) {
       //console.log(juris[x])
@@ -318,7 +332,7 @@ function colourmap() {
     }
   }
 
-  if (mapMode == 2) {
+  if (mapMode == 3) {
     // Colours the map based on seats that flip from the 2021 Canadian Election
     for (let x = jts; x < jtc; x++) {
       if (SeatFlip[x] == 999) {
@@ -341,12 +355,12 @@ function colourmap() {
     }
   }
 
-  if (mapMode == 3) {
+  if (mapMode == 4) {
     // Colours the map solid colours
     for (let x = jts; x < jtc; x++) {
       eval(
         'setSVGColour("' +
-          juris[x] +
+          idprefix + juris[x] +
           '", ' +
           partyabbrv[SeatWinner[x]] +
           "palette[3])"
@@ -357,19 +371,19 @@ function colourmap() {
 
 // Seat and Vote Outputs
 
+function setTextSeats() {
+  for (let x = 0; x < partyabbrv.length; x++) {
+    var s = SeatCount[x];
+    eval(partyabbrv[x] + 'OutputSeats.innerText = s + " seats"');
+  }
+}
+
 function setTextVotes() {
   for (let x = 0; x < partyabbrv.length; x++) {
     var p = Math.round(nationalvote[x] * 100) + "%";
     eval(partyabbrv[x] + "OutputVotes.innerText = p");
   }
   sumCheck.innerText = Math.round(sad(nationalvote, 0) * 100) + "%";
-}
-
-function setTextSeats() {
-  for (let x = 0; x < partyabbrv.length; x++) {
-    var s = SeatCount[x];
-    eval(partyabbrv[x] + 'OutputSeats.innerText = s + " seats"');
-  }
 }
 
 for(let x = 0; x < partyabbrv.length; x++){
@@ -388,19 +402,19 @@ const modeFourButton = document.querySelector(".modefour");
 // Mode Buttons
 
 modeOneButton.addEventListener("click", () => {
-  mapMode = 0;
-  colourmap();
-});
-modeTwoButton.addEventListener("click", () => {
   mapMode = 1;
   colourmap();
 });
-modeThreeButton.addEventListener("click", () => {
+modeTwoButton.addEventListener("click", () => {
   mapMode = 2;
   colourmap();
 });
-modeFourButton.addEventListener("click", () => {
+modeThreeButton.addEventListener("click", () => {
   mapMode = 3;
+  colourmap();
+});
+modeFourButton.addEventListener("click", () => {
+  mapMode = 4;
   colourmap();
 });
 
@@ -426,19 +440,19 @@ document.addEventListener("DOMContentLoaded", function () {
     for (let x = 0; x < partyabbrv.length; x++) {
       initelec[x] = nationalvote[x];
     }
-
-    // Tells the user how many seats are needed for a majority
-
-    const lblMaj = document.getElementById("maj")
     
-    lblMaj.innerText = (Math.floor(juris.length/2) + 1) + " needed for majority"
-
     colourmap();
     setTextVotes();
     setTextSeats();
     jurisClicks();
   });
 });
+
+// Tells the user how many seats are needed for a majority
+
+const lblMaj = document.getElementById("maj")
+    
+lblMaj.innerText = (Math.floor(juris.length/2) + 1) + " needed for majority"
 
 simButton.addEventListener("click", () => {
   Swinger();

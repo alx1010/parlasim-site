@@ -1,0 +1,75 @@
+<html>
+    <head>
+        <title>USA 538</title>
+        <link rel='stylesheet' media='screen and (min-width: 1348px)' href='sitestyleX1368.css' />
+        <link rel='stylesheet' media='screen and (min-width: 1900px)' href='sitestyleX1920.css' />
+    </head>
+
+    <body scroll="no" style="overflow: hidden">
+
+      <div id="myTable">
+        <table>
+          <tr style="height: 20%;">
+            <th class="gopheader">GOP</th>
+            <th class="demheader">DEM</th>
+          </tr>
+          <tr style="height: 20%;">
+            <th class="gop" id = "gopVotes"></th>
+            <th class="dem" id = "demVotes"></th>
+            <th id = "sumcheck" style="font-size: 120%;"></th>
+          </tr>
+          <tr>
+            <td class="gop"><button id = "gopup">+%</button></td>
+            <td class="dem"><button id = "demup">+%</button></td>
+          </tr>
+          <tr>
+            <td class="gop"><button id = "gopdown">-%</button></td>
+            <td class="dem"><button id = "demdown">-%</button></td>
+          </tr>
+          <tr style="font-size: 80%; height: 30%;">
+            <td class="gop" id = "gopSeats"></td>
+            <td class="dem" id = "demSeats"></td>
+            <td id="maj">172 needed for Majority</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class = "buttons">
+        <br><table>
+          <tr>
+            <td><button class ="sim" style="height: 100%; width: 100%; font-size: 80%; font-weight: bold;"> Sim </button></td>
+            <td><p style="font-weight: bold;">| Modes:</p></td>
+            <td><button class ="modeone"> Margin </button></td>
+            <td><button class ="modetwo"> Winning % </button></td>
+            <td><button class ="modethree"> Flips </button></td>
+            <td><button class ="modefour"> Solid Colour </button></td>
+          </tr>
+        </table>
+      </div>
+
+      <div id="jurisTable">
+        <p id="jurisName" style="font-size: 140%; font-weight: bold;"> Juris Name</p>
+        <table>
+          <tr>
+            <td>GOP</td>
+            <td>DEM</td>
+          </tr>
+          <tr">
+            <td id="gopJuris">~~%</td>
+            <td id="demJuris">~~%</td>
+          </tr>
+        </table>
+        <p id="jurisMargin" style="font-size: 120%">Margin: ~~%</p>
+      </div>
+
+      <script type="text/javascript" src="../usa.js"></script>
+      <script type="text/javascript" src="data.js"></script>
+      <script type="text/javascript" src="../base.js"></script>
+      <script type="text/javascript" src="../nvbuttons.js"></script>
+      <script type="text/javascript" src="evs.js"></script>
+      <div class="map">
+        <object type="image/svg+xml" data="usaCountiesB.svg" class="svgmap" id="map1"></object>
+        <object type="image/svg+xml" data="usaStatesC.svg" class="svgmap2" id="map2"></object>
+      </div>
+    </body>  
+</html>
