@@ -448,7 +448,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// Tells the user how many seats are needed for a majority
+// Tells the user how many seats are needed for a majority, dynamic
 
 const lblMaj = document.getElementById("maj")
     
