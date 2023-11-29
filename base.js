@@ -5,6 +5,7 @@ var initSeatWinner = [];
 var SeatFlip = [];
 
 for(let x = 0; x < partyabbrv.length; x++){eval('var ' + partyabbrv[x] + 'sv = []')}
+var othsv = []
 
 var WinningDiff = [];
 var WinningPerc = [];
@@ -65,6 +66,7 @@ function initJurisVote() {
           "raw[y] / jurisSum)"
       );
     }
+    othsv[y] = fourDecRound(othraw[y] / jurisSum)
   }
 }
 
@@ -118,7 +120,7 @@ function SeatResults() {
 
     for (let y = 0; y < partyabbrv.length; y++) {
       eval(
-        "if(" + partyabbrv[y] + "sv[x] == w){SeatCount[y]++; SeatWinner[x] = y}"
+        "if(" + partyabbrv[y] + "sv[x] == w){SeatCount[y]++; SeatWinner[x] = partyabbrv[y]}"
       );
     }
 
@@ -179,6 +181,7 @@ var clicked = 0;
 function jurisClicks() {
     const jurisName = document.getElementById("jurisName");
     const jurisMargin = document.getElementById("jurisMargin");
+    const jurisFlip = document.getElementById("jurisFlip");
     
     for(let x = 0; x < partyabbrv.length; x++){
         eval('var ' + partyabbrv[x] + 'Juris = document.getElementById("' + partyabbrv[x] + 'Juris")')
@@ -186,7 +189,9 @@ function jurisClicks() {
 
   function onJurisClick(x) {
     jurisName.innerText = jurisnames[x];
-    jurisMargin.innerText = "Margin: " + fourDecRound(WinningDiff[x] * 100) +"% => " + partyabbrv[SeatWinner[x]].toUpperCase();
+    jurisMargin.innerText = "Margin: " + fourDecRound(WinningDiff[x] * 100) +"% => " + SeatWinner[x].toUpperCase();
+    if(SeatWinner[x]==initSeatWinner[x]){jurisFlip.innerText = SeatWinner[x].toUpperCase() + " Hold"}
+    else {jurisFlip.innerText = initSeatWinner[x].toUpperCase() + " => " + SeatWinner[x].toUpperCase() + " Flip"}
     for(let y = 0; y < partyabbrv.length; y++){
         eval(partyabbrv[y] + 'Juris.innerText = fourDecRound(' + partyabbrv[y] + 'sv[x] * 100) + "%"')
     }
@@ -220,127 +225,40 @@ function colourmap() {
   var jts = 0; // juris to skip
 
   if (mapMode == 1) {
+    var top = 0.25
+    var decrement = 0.05
+    var bot = twoDecRound(top-(decrement*(eval*(partyabbrv[0] + 'palette.length - 1'))))
     // Colours the map based on the margin of victory, default
-    for (let x = jts; x < jtc; x++) {
-      if (WinningDiff[x] >= 0.25) {
-        eval(
-          'setSVGColour("' +
-            idprefix+ juris[x] +
-            '", ' +
-            partyabbrv[SeatWinner[x]] +
-            "palette[0])"
-        );
-      } else if (WinningDiff[x] < 0.25 && WinningDiff[x] >= 0.2) {
-        eval(
-          'setSVGColour("' +
-            idprefix + juris[x] +
-            '", ' +
-            partyabbrv[SeatWinner[x]] +
-            "palette[1])"
-        );
-      } else if (WinningDiff[x] < 0.2 && WinningDiff[x] >= 0.15) {
-        eval(
-          'setSVGColour("' +
-            idprefix + juris[x] +
-            '", ' +
-            partyabbrv[SeatWinner[x]] +
-            "palette[2])"
-        );
-      } else if (WinningDiff[x] < 0.15 && WinningDiff[x] >= 0.1) {
-        eval(
-          'setSVGColour("' +
-            idprefix + juris[x] +
-            '", ' +
-            partyabbrv[SeatWinner[x]] +
-            "palette[3])"
-        );
-      } else if (WinningDiff[x] < 0.1 && WinningDiff[x] >= 0.05) {
-        eval(
-          'setSVGColour("' +
-            idprefix + juris[x] +
-            '", ' +
-            partyabbrv[SeatWinner[x]] +
-            "palette[4])"
-        );
-      } else if (WinningDiff[x] < 0.05) {
-        eval(
-          'setSVGColour("' +
-            idprefix + juris[x] +
-            '", ' +
-            partyabbrv[SeatWinner[x]] +
-            "palette[5])"
-        );
-      } else
-        console.log("Something went wrong. WinningDiff: " + WinningDiff[x]);
+    for (let x = 0; x < juris.length; x++) {
+      id = idprefix + juris[x]
+      eval('setSVGColour("' + id + '", ' + SeatWinner[x] + "palette[Math.ceil((top-WinningDiff[x])/decrement)])")
+      if(WinningDiff[x]>top){eval('setSVGColour("' + id + '", ' + SeatWinner[x] + "palette[0])")}
+      if(WinningDiff[x]<bot){eval('setSVGColour("' + id + '", ' + SeatWinner[x] + "palette[" + SeatWinner[x] + "palette.length-1])")}
     }
   }
 
   if (mapMode == 2) {
-    // Colours the map based on the percentage of vote recieved by the winner
-    for (let x = jts; x < jtc; x++) {
-      //console.log(juris[x])
-      if (WinningPerc[x] >= 0.7) {
-        eval(
-          'setSVGColour("' +
-            idprefix + juris[x] +
-            '", ' +
-            partyabbrv[SeatWinner[x]] +
-            "palette[0])"
-        );
-      } else if (WinningPerc[x] < 0.7 && WinningPerc[x] >= 0.6) {
-        eval(
-          'setSVGColour("' +
-            idprefix + juris[x] +
-            '", ' +
-            partyabbrv[SeatWinner[x]] +
-            "palette[1])"
-        );
-      } else if (WinningPerc[x] < 0.6 && WinningPerc[x] >= 0.5) {
-        eval(
-          'setSVGColour("' +
-            idprefix + juris[x] +
-            '", ' +
-            partyabbrv[SeatWinner[x]] +
-            "palette[2])"
-        );
-      } else if (WinningPerc[x] < 0.5 && WinningPerc[x] >= 0.4) {
-        eval(
-          'setSVGColour("' +
-            idprefix + juris[x] +
-            '", ' +
-            partyabbrv[SeatWinner[x]] +
-            "palette[3])"
-        );
-      } else if (WinningPerc[x] < 0.4 && WinningPerc[x] >= 0.3) {
-        eval(
-          'setSVGColour("' +
-            idprefix + juris[x] +
-            '", ' +
-            partyabbrv[SeatWinner[x]] +
-            "palette[4])"
-        );
-      } else if (WinningPerc[x] < 0.3) {
-        eval(
-          'setSVGColour("' +
-            idprefix + juris[x] +
-            '", ' +
-            partyabbrv[SeatWinner[x]] +
-            "palette[5])"
-        );
-      } else
-        console.log("Something went wrong. WinningPerc: " + WinningPerc[x]);
+    var top = 0.70
+    var decrement = 0.10
+    var bot = twoDecRound(top-(decrement*(eval*(partyabbrv[0] + 'palette.length - 1'))))
+    // Colours the map based on the margin of victory, default
+    for (let x = 0; x < juris.length; x++) {
+      id = idprefix + juris[x]
+      eval('setSVGColour("' + id + '", ' + SeatWinner[x] + "palette[Math.ceil((top-WinningPerc[x])/decrement)])")
+      if(WinningPerc[x]>top){eval('setSVGColour("' + id + '", ' + SeatWinner[x] + "palette[0])")}
+      if(WinningPerc[x]<bot){eval('setSVGColour("' + id + '", ' + SeatWinner[x] + "palette[" + SeatWinner[x] + "palette.length-1])")}
     }
   }
 
   if (mapMode == 3) {
     // Colours the map based on seats that flip from the 2021 Canadian Election
-    for (let x = jts; x < jtc; x++) {
+    for (let x = 0; x < juris.length; x++) {
       if (SeatFlip[x] == 999) {
         eval(
           'setSVGColour("' +
             idprefix + juris[x] +
             '", ' +
-            partyabbrv[SeatWinner[x]] +
+            SeatWinner[x] +
             "palette[5])"
         );
       } else if (SeatFlip[x] != 999) {
@@ -348,7 +266,7 @@ function colourmap() {
           'setSVGColour("' +
             idprefix + juris[x] +
             '", ' +
-            partyabbrv[SeatWinner[x]] +
+            SeatWinner[x] +
             "palette[1])"
         );
       } else console.log("Something went wrong. SeatFlip: " + SeatFlip[x]);
@@ -357,12 +275,12 @@ function colourmap() {
 
   if (mapMode == 4) {
     // Colours the map solid colours
-    for (let x = jts; x < jtc; x++) {
+    for (let x = 0; x < juris.length; x++) {
       eval(
         'setSVGColour("' +
           idprefix + juris[x] +
           '", ' +
-          partyabbrv[SeatWinner[x]] +
+          SeatWinner[x] +
           "palette[3])"
       );
     }

@@ -104,14 +104,16 @@ function CalculateEVs() {
 function stateClicks() {
   const jurisName = document.getElementById("jurisName");
   const jurisMargin = document.getElementById("jurisMargin");
+  const jurisFlip = document.getElementById("jurisFlip");
   
   for(let x = 0; x < partyabbrv.length; x++){
-      eval('var ' + partyabbrv[x] + 'Juris = document.getElementById("' + partyabbrv[x] + 'Juris")')
+    eval('var ' + partyabbrv[x] + 'Juris = document.getElementById("' + partyabbrv[x] + 'Juris")')
   }
 
 function onJurisClick(x) {
   jurisName.innerText = states[x].toUpperCase();
   jurisMargin.innerText = "Margin: " + fourDecRound(WinningDiffState[x] * 100) + "% => " + partyabbrv[StateWinner[x]].toUpperCase();
+  jurisFlip.innerText = "~~~"
   for(let y = 0; y < partyabbrv.length; y++){
       eval(partyabbrv[y] + 'Juris.innerText = fourDecRound(' + partyabbrv[y] + 'voteStates[x] * 100) + "%"')
   }
