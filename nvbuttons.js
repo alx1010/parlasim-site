@@ -15,6 +15,16 @@ function handleKeyUp() {
 document.addEventListener('keydown', handleKeyDown);
 document.addEventListener('keyup', handleKeyUp);
 
+// Function for changing vote
+
+function voteChange(t,n){
+  if((nationalvote[t] + n) >= 0){
+    nationalvote[t] += n
+    setTextVotes()
+  }
+  else{nationalvote[t] = 0;setTextVotes()}
+}
+
 for (let x = 0; x < partyabbrv.length; x++) {
   eval(
     "var " +
@@ -39,17 +49,17 @@ for (let x = 0; x < partyabbrv.length; x++) {
       "UpButton.addEventListener(" +
       c +
       ", () => {" + 
-      "if(keyID == 1){nationalvote[x] += 0.001;setTextVotes()} " + 
-      "else if(keyID == 2) {nationalvote[x] += 0.0001;setTextVotes()}" + 
-      "else if(keyID == 0) {nationalvote[x] += 0.01;setTextVotes()}})"
+      "if(keyID == 0){voteChange(x,0.01)}" + 
+      "else if(keyID == 1){voteChange(x,0.001)}" + 
+      "else if(keyID == 2){voteChange(x,0.0001)}})"
   );
   eval(
     partyabbrv[x] +
       "DownButton.addEventListener(" +
       c +
       ", () => {" + 
-      "if(keyID == 1){nationalvote[x] += -0.001;setTextVotes()} " + 
-      "else if(keyID == 2) {nationalvote[x] += -0.0001;setTextVotes()}" + 
-      "else if(keyID == 0) {nationalvote[x] += -0.01;setTextVotes()}})"
+      "if(keyID == 0){voteChange(x,-0.01)}" + 
+      "else if(keyID == 1){voteChange(x,-0.001)}" + 
+      "else if(keyID == 2){voteChange(x,-0.0001)}})"
   );
 }
