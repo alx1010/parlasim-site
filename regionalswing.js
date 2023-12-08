@@ -1,6 +1,5 @@
 for (let x = 0; x < codes.length; x++) {
-  eval("var " + codes[x] + "DataInit = 0");
-  eval("var " + codes[x] + "DataRawInit = 0");
+  eval("var " + codes[x] + "DataInit = []");
 }
 
 ATLDataInit = [0.43, 0.31, 0.17, 0.03, 0.04, 0.0];
