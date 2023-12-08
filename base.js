@@ -102,7 +102,7 @@ function SeatResults() {
             w = eval(partyabbrv[y] + 'sv[x]')
         }
     }
-    if(othsv[x]>w){w=othsv[x]}
+    if(othsv[x]>w){w=othsv[x]; console.log("OTH WINNER"); console.log(othsv[x] + " and " + w)}
 
     // Finding the second max
     
@@ -124,7 +124,7 @@ function SeatResults() {
       );
     }
 
-    if(SeatWinner[x]==undefined){SeatWinner[x]="oth"}
+    if(othsv[x]==w){SeatWinner[x]="oth"}
 
     if (initSeatWinner[x] != undefined) {
       if (initSeatWinner[x] != SeatWinner[x]) {
@@ -234,8 +234,6 @@ function colourmap() {
     // Colours the map based on the margin of victory, default
     for (let x = 0; x < juris.length; x++) {
       id = idprefix + juris[x]
-      console.log(SeatWinner[x])
-      console.log(juris[x])
       eval('setSVGColour("' + id + '", ' + SeatWinner[x] + "palette[Math.ceil((top-WinningDiff[x])/decrement)])")
       if(WinningDiff[x]>top){eval('setSVGColour("' + id + '", ' + SeatWinner[x] + "palette[0])")}
       if(WinningDiff[x]<bot){eval('setSVGColour("' + id + '", ' + SeatWinner[x] + "palette[" + SeatWinner[x] + "palette.length-1])")}
