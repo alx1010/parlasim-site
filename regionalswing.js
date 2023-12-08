@@ -1,6 +1,7 @@
+const rgnl = 1
+
 for (let x = 0; x < codes.length; x++) {
-  eval("var " + codes[x] + "DataInit = 0");
-  eval("var " + codes[x] + "DataRawInit = 0");
+  eval("var " + codes[x] + "DataInit = []");
 }
 
 ATLDataInit = [0.43, 0.31, 0.17, 0.03, 0.04, 0.0];
@@ -18,6 +19,7 @@ function Swinger() {
     stc = sts + codesJuris[c];
 
     for (let y = 0; y < partyabbrv.length; y++) {
+      if(eval(codes[c] + "DataInit[y]") == 0){break;}
       if (partyabbrv[y] == "bloc" && codes[c] != "QC") {
         break;
       }
@@ -52,6 +54,7 @@ function Swinger() {
 
   for (let x = (juris.length-3); x < juris.length; x++) {
     for (let y = 0; y < partyabbrv.length; y++) {
+      if(initelec[y] == 0){break;}
       eval(
         partyabbrv[y] +
           "raw[x] = " +
@@ -66,7 +69,6 @@ function Swinger() {
 
 for (let x = 0; x < codes.length; x++) {
   eval("var " + codes[x] + "Data = [0,0,0,0,0,0]");
-  eval("var " + codes[x] + "DataRaw = [0,0,0,0,0,0]");
 }
 
 function initSubmissionBoxes() {
@@ -107,7 +109,6 @@ function initSubmissionBoxes() {
           codesRawOthSum = codesRawOthSum + othraw[s];
         }
         eval("codesRawSum = codesRawSum + " + codes[x] + "Data[y]");
-        eval(codes[x] + "DataRaw[y] = " + codes[x] + "Data[y]");
       }
 
       codesRawSum = codesRawSum + codesRawOthSum;
@@ -173,4 +174,7 @@ function gatherCodesResults() {
 const btnSubmit = document.querySelector("#btnSubmit");
 btnSubmit.addEventListener("click", () => {
   gatherCodesResults();
+  //for (let x = 0; x < codes.length; x++) {
+  //  console.log(eval(codes[x] + "Data"));
+  //}
 });

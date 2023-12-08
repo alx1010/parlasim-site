@@ -6,6 +6,7 @@ var SeatFlip = [];
 
 for(let x = 0; x < partyabbrv.length; x++){eval('var ' + partyabbrv[x] + 'sv = []')}
 var othsv = []
+var othsv = []
 
 var WinningDiff = [];
 var WinningPerc = [];
@@ -101,6 +102,7 @@ function SeatResults() {
             w = eval(partyabbrv[y] + 'sv[x]')
         }
     }
+    if(othsv[x]>w){w=othsv[x]}
 
     // Finding the second max
     
@@ -109,6 +111,8 @@ function SeatResults() {
             sw = eval(partyabbrv[y] + 'sv[x]')
         }
     }
+
+    if(othsv[x]>sw && othsv[x]!=w){sw=othsv[x]}
 
     WinningDiff[x] = fourDecRound(w - sw);
 
@@ -119,6 +123,8 @@ function SeatResults() {
         "if(" + partyabbrv[y] + "sv[x] == w){SeatCount[y]++; SeatWinner[x] = partyabbrv[y]}"
       );
     }
+
+    if(SeatWinner[x]==undefined){SeatWinner[x]="oth"}
 
     if (initSeatWinner[x] != undefined) {
       if (initSeatWinner[x] != SeatWinner[x]) {
@@ -133,6 +139,7 @@ function SeatResults() {
 function Swinger() {
   for (let x = 0; x < juris.length; x++) {
     for (let y = 0; y < partyabbrv.length; y++) {
+      if(initelec[y] == 0){break;}
       eval(
         partyabbrv[y] +
           "raw[x] = " +
@@ -249,7 +256,7 @@ function colourmap() {
   }
 
   if (mapMode == 3) {
-    // Colours the map based on seats that flip from the 2021 Canadian Election
+    // Colours the map based on seats that flip from init winner
     for (let x = 0; x < juris.length; x++) {
       if (SeatFlip[x] == 999) {
         eval(

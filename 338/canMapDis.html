@@ -17,6 +17,7 @@
             <th class="grnheader">GRN</th>
             <th class="ppcheader">PPC</th>
             <th class="blocheader">Bloc</th>
+            <th id = "sumcheck" style="font-size: 120%;" rowspan="2"></th>
           </tr>
           <tr style="height: 20%;">
             <th class="lpc" id = "lpcVotes"></th>
@@ -25,7 +26,6 @@
             <th class="grn" id = "grnVotes"></th>
             <th class="ppc" id = "ppcVotes"></th>
             <th class="bloc" id = "blocVotes"></th>
-            <th id = "sumcheck" style="font-size: 120%;"></th>
           </tr>
           <tr>
             <td class="lpc"><button id = "lpcup">+%</button></td>
@@ -33,7 +33,8 @@
             <td class="ndp"><button id = "ndpup">+%</button></td>
             <td class="grn"><button id = "grnup">+%</button></td>
             <td class="ppc"><button id = "ppcup">+%</button></td>
-            <td class="bloc"><button id = "blocup">+%</button></td>   
+            <td class="bloc"><button id = "blocup">+%</button></td>
+            <td style="font-size: 70%; font-weight: bold;" rowspan="2">Shift: +- 0.10% Ctrl: +- 0.01%</td>   
           </tr>
           <tr>
             <td class="lpc"><button id = "lpcdown">-%</button></td>
@@ -64,6 +65,14 @@
             <td><button class ="modetwo"> Winning % </button></td>
             <td><button class ="modethree"> Flips </button></td>
             <td><button class ="modefour"> Solid Colour </button></td>
+          </tr>
+        </table>
+        <br><table>
+          <tr>
+            <td><p style="font-weight: bold;">Datasets:</p></td>
+            <td><button id ="dataOne"> 2015 </button></td>
+            <td><button id ="dataTwo"> 2019 </button></td>
+            <td><button id ="dataThree"> 2021 </button></td>
           </tr>
         </table>
       </div>

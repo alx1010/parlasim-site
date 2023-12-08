@@ -1,4 +1,4 @@
-var partyabbrv = ["lpc", "cpc", "ndp", "grn", "ppc", "bloc"];
+var partyabbrv = ["lpc", "cpc", "ndp", "grn", "bloc"];
 
 var lpcpalette = [
   "#630408",
@@ -31,14 +31,6 @@ var grnpalette = [
   "#3a9c32",
   "#64b15d",
   "#8cc487",
-];
-var ppcpalette = [
-  "#391a57",
-  "#4b2273",
-  "#693199",
-  "#8d3fbf",
-  "#a767cc",
-  "#c08ed9",
 ];
 var blocpalette = [
   "#1a5257",
