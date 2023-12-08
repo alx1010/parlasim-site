@@ -234,8 +234,6 @@ function colourmap() {
     // Colours the map based on the margin of victory, default
     for (let x = 0; x < juris.length; x++) {
       id = idprefix + juris[x]
-      console.log(SeatWinner[x])
-      console.log(juris[x])
       eval('setSVGColour("' + id + '", ' + SeatWinner[x] + "palette[Math.ceil((top-WinningDiff[x])/decrement)])")
       if(WinningDiff[x]>top){eval('setSVGColour("' + id + '", ' + SeatWinner[x] + "palette[0])")}
       if(WinningDiff[x]<bot){eval('setSVGColour("' + id + '", ' + SeatWinner[x] + "palette[" + SeatWinner[x] + "palette.length-1])")}
@@ -256,7 +254,7 @@ function colourmap() {
   }
 
   if (mapMode == 3) {
-    // Colours the map based on seats that flip from the 2021 Canadian Election
+    // Colours the map based on seats that flip from init winner
     for (let x = 0; x < juris.length; x++) {
       if (SeatFlip[x] == 999) {
         eval(
