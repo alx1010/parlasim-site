@@ -174,4 +174,7 @@ function gatherCodesResults() {
 const btnSubmit = document.querySelector("#btnSubmit");
 btnSubmit.addEventListener("click", () => {
   gatherCodesResults();
+  //for (let x = 0; x < codes.length; x++) {
+  //  console.log(eval(codes[x] + "Data"));
+  //}
 });
