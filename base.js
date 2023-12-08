@@ -36,16 +36,12 @@ function fourDecRound(num) {
   return Math.round(num * 1e4) / 1e4;
 }
 
-function sad(arr, div) {
-  var sum = 0;
+function sum(arr) {
+  var s = 0;
   for (let y = 0; y < arr.length; y++) {
-    sum = sum + arr[y];
+    s = s + arr[y];
   }
-  if (div != 0) {
-    return fourDecRound(sum / div);
-  } else {
-    return twoDecRound(sum);
-  }
+  return s
 }
 
 var nationalvote = [];
@@ -75,11 +71,11 @@ initJurisVote();
 function initNationalVote() {
   var nvsum = 0
   for(let x = 0; x < partyabbrv.length; x++){
-    eval('nvsum = nvsum + sad(' + partyabbrv[x] + 'raw, 0)')
+    eval('nvsum = nvsum + sum(' + partyabbrv[x] + 'raw)')
   }
-  nvsum = nvsum + sad(othraw, 0)
+  nvsum = nvsum + sum(othraw, 0)
   for (let x = 0; x < partyabbrv.length; x++) {
-    eval("nationalvote[x] = twoDecRound((sad(" + partyabbrv[x] + "raw, 0)/nvsum))")
+    eval("nationalvote[x] = fourDecRound((sum(" + partyabbrv[x] + "raw)/nvsum))")
   }
   
 }
@@ -231,6 +227,8 @@ function colourmap() {
     // Colours the map based on the margin of victory, default
     for (let x = 0; x < juris.length; x++) {
       id = idprefix + juris[x]
+      console.log(SeatWinner[x])
+      console.log(juris[x])
       eval('setSVGColour("' + id + '", ' + SeatWinner[x] + "palette[Math.ceil((top-WinningDiff[x])/decrement)])")
       if(WinningDiff[x]>top){eval('setSVGColour("' + id + '", ' + SeatWinner[x] + "palette[0])")}
       if(WinningDiff[x]<bot){eval('setSVGColour("' + id + '", ' + SeatWinner[x] + "palette[" + SeatWinner[x] + "palette.length-1])")}
@@ -298,10 +296,10 @@ function setTextSeats() {
 
 function setTextVotes() {
   for (let x = 0; x < partyabbrv.length; x++) {
-    var p = Math.round(nationalvote[x] * 100) + "%";
+    var p = (twoDecRound(nationalvote[x] * 100)).toFixed(2) + "%";
     eval(partyabbrv[x] + "OutputVotes.innerText = p");
   }
-  sumCheck.innerText = Math.round(sad(nationalvote, 0) * 100) + "%";
+  sumCheck.innerText = (twoDecRound(sum(nationalvote)* 100)).toFixed(2) + "%";
 }
 
 for(let x = 0; x < partyabbrv.length; x++){
