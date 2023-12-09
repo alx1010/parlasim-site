@@ -56,7 +56,7 @@
         </table>
       </div>
 
-      <div class = "buttons">
+      <div class = "buttons" style="z-index: 3;";>
         <br><table>
           <tr>
             <td><button class ="sim" style="height: 100%; width: 100%; font-size: 80%; font-weight: bold;"> Sim </button></td>
@@ -67,7 +67,7 @@
             <td><button class ="modefour"> Solid Colour </button></td>
           </tr>
         </table>
-        <br><table>
+        <table>
           <tr>
             <td><p style="font-weight: bold;">Datasets:</p></td>
             <td><button id ="dataOne"> 2015 </button></td>
@@ -101,10 +101,99 @@
         <p id="jurisFlip" style="font-size: 120%">~~~ Hold</p>
       </div>
 
+      <div id="myTableInputs" style="position: absolute; z-index: 2; top: 28%;">
+
+        <br><br><table style="width:100%; height: 20%; font-size: 100%;">
+          <tr style="font-size: 160%;">
+            <td colspan="7" style="font-weight: bold;">Regional Swing:</td>
+          </tr>
+          <tr><td colspan="7">-----------------------------------------------------------------------</td></tr>
+          <tr style="font-size: 150%">
+            <td></td>
+            <td>LPC</td>
+            <td>CPC</td>
+            <td>NDP</td>
+            <td>GRN</td>
+            <td>PPC</td>
+            <td>Bloc</td>
+          </tr>
+          <tr><td colspan="7">-----------------------------------------------------------------------</td></tr>
+          <tr>
+            <td>B.C:</td>
+            <td><input type="text" id="lpcBC" size="1pc"><br></td>
+            <td><input type="text" id="cpcBC" size="1pc"><br></td>
+            <td><input type="text" id="ndpBC" size="1pc"><br></td>
+            <td><input type="text" id="grnBC" size="1pc"><br></td>
+            <td><input type="text" id="ppcBC" size="1pc"><br></td>
+            <td>/////////////</td>
+          </tr>
+          <tr><td colspan="7">-----------------------------------------------------------------------</td></tr>
+          <tr>
+            <td>Alberta:</td>
+            <td><input type="text" id="lpcAB" size="1pc"><br></td>
+            <td><input type="text" id="cpcAB" size="1pc"><br></td>
+            <td><input type="text" id="ndpAB" size="1pc"><br></td>
+            <td><input type="text" id="grnAB" size="1pc"><br></td>
+            <td><input type="text" id="ppcAB" size="1pc"><br></td>
+            <td>/////////////</td>
+          </tr>
+          </tr>
+          <tr><td colspan="7">-----------------------------------------------------------------------</td></tr>
+          <tr>
+            <td>Prairies:</td>
+            <td><input type="text" id="lpcPR" size="1pc"><br></td>
+            <td><input type="text" id="cpcPR" size="1pc"><br></td>
+            <td><input type="text" id="ndpPR" size="1pc"><br></td>
+            <td><input type="text" id="grnPR" size="1pc"><br></td>
+            <td><input type="text" id="ppcPR" size="1pc"><br></td>
+            <td>/////////////</td>
+          </tr>
+          <tr><td colspan="7">-----------------------------------------------------------------------</td></tr>
+          <tr>
+            <td>Ontario:</td>
+            <td><input type="text" id="lpcON" size="1pc"><br></td>
+            <td><input type="text" id="cpcON" size="1pc"><br></td>
+            <td><input type="text" id="ndpON" size="1pc"><br></td>
+            <td><input type="text" id="grnON" size="1pc"><br></td>
+            <td><input type="text" id="ppcON" size="1pc"><br></td>
+            <td>/////////////</td>
+          </tr>
+          <tr><td colspan="7">-----------------------------------------------------------------------</td></tr>
+          <tr>
+            <td>Quebec:</td>
+            <td><input type="text" id="lpcQC" size="1pc"><br></td>
+            <td><input type="text" id="cpcQC" size="1pc"><br></td>
+            <td><input type="text" id="ndpQC" size="1pc"><br></td>
+            <td><input type="text" id="grnQC" size="1pc"><br></td>
+            <td><input type="text" id="ppcQC" size="1pc"><br></td>
+            <td><input type="text" id="blocQC" size="1pc"><br></td>
+          </tr>
+          <tr><td colspan="7">-----------------------------------------------------------------------</td></tr>
+          <tr>
+            <td>Atlantic:</td>
+            <td><input type="text" id="lpcATL" size="1pc"><br></td>
+            <td><input type="text" id="cpcATL" size="1pc"><br></td>
+            <td><input type="text" id="ndpATL" size="1pc"><br></td>
+            <td><input type="text" id="grnATL" size="1pc"><br></td>
+            <td><input type="text" id="ppcATL" size="1pc"><br></td>
+            <td>/////////////</td>
+          </tr>
+          <tr><td colspan="7">-----------------------------------------------------------------------</td></tr>
+        </table>
+
+        <br><table style="width: 10%;">
+          <tr>
+            <td><button id="btnSubmit">Submit</button></td>
+            <td><p id="submitCheck" style="font-size: 24px; text-align: right;">Waiting...</p></td>
+          </tr>
+        </table>       
+      </div> 
+
       <script type="text/javascript" src="../canada.js"></script>
       <script type="text/javascript" src="data.js"></script>
-      <script type="text/javascript" src="../base.js"></script>
       <script type="text/javascript" src="../nvbuttons.js"></script>
+      <script type="text/javascript" src="../regionalswing.js"></script>
+      <script type="text/javascript" src="../base.js"></script>
       <div class="map">
         <object type="image/svg+xml" data="can338.svg" class="svgmap"></object>
       </div>

@@ -927,16 +927,13 @@ dataOne.addEventListener("click", () => {
     setTextSeats();
     jurisClicks();
 
-    if(rgnl!=undefined){
-        initSubmissionBoxes()
-
-        ATLDataInit = [0.57, 0.18, 0.17, 0.03, 0, 0]
-        QCDataInit = [0.35, 0.16, 0.25, 0.02, 0, 0.19]
-        ONDataInit = [0.44, 0.34, 0.16, 0.03, 0, 0]
-        PRDataInit = [0.34, 0.41, 0.19, 0.03, 0, 0]
-        ABDataInit = [0.23, 0.56, 0.11, 0.02, 0, 0]
-        BCDataInit = [0.34, 0.29, 0.25, 0.08, 0, 0]
-    }
+    initSubmissionBoxes()
+    ATLDataInit = [0.57, 0.18, 0.17, 0.03, 0, 0]
+    QCDataInit = [0.35, 0.16, 0.25, 0.02, 0, 0.19]
+    ONDataInit = [0.44, 0.34, 0.16, 0.03, 0, 0]
+    PRDataInit = [0.34, 0.41, 0.19, 0.03, 0, 0]
+    ABDataInit = [0.23, 0.56, 0.11, 0.02, 0, 0]
+    BCDataInit = [0.34, 0.29, 0.25, 0.08, 0, 0]
 })
 
 const dataTwo = document.getElementById("dataTwo")
@@ -978,16 +975,13 @@ dataTwo.addEventListener("click", () => {
     setTextSeats();
     jurisClicks();
 
-    if(rgnl!=undefined){
-        initSubmissionBoxes()
-
-        ATLDataInit = [0.39, 0.27, 0.15, 0.12, 0.01, 0]
-        QCDataInit =  [0.33, 0.16, 0.11, 0.04, 0.01, 0.32]
-        ONDataInit =  [0.4, 0.32, 0.16, 0.06, 0.02, 0]
-        PRDataInit =  [0.19, 0.53, 0.2, 0.04, 0.02, 0]
-        ABDataInit =  [0.14, 0.68, 0.11, 0.03, 0.02, 0]
-        BCDataInit =  [0.25, 0.32, 0.23, 0.12, 0.02, 0]
-    }
+    initSubmissionBoxes()
+    ATLDataInit = [0.39, 0.27, 0.15, 0.12, 0.01, 0]
+    QCDataInit =  [0.33, 0.16, 0.11, 0.04, 0.01, 0.32]
+    ONDataInit =  [0.4, 0.32, 0.16, 0.06, 0.02, 0]
+    PRDataInit =  [0.19, 0.53, 0.2, 0.04, 0.02, 0]
+    ABDataInit =  [0.14, 0.68, 0.11, 0.03, 0.02, 0]
+    BCDataInit =  [0.25, 0.32, 0.23, 0.12, 0.02, 0]
 })
 
 const dataThree = document.getElementById("dataThree")
@@ -1210,14 +1204,11 @@ dataThree.addEventListener("click", () => {
     setTextSeats();
     jurisClicks();
 
-    if(rgnl!=undefined){
-        initSubmissionBoxes()
-
-        ATLDataInit = [0.43, 0.31, 0.17, 0.03, 0.04, 0.0];
-        QCDataInit = [0.31, 0.17, 0.09, 0.01, 0.02, 0.3];
-        ONDataInit = [0.39, 0.34, 0.18, 0.02, 0.05, 0.0];
-        PRDataInit = [0.19, 0.47, 0.21, 0.01, 0.07, 0.0];
-        ABDataInit = [0.14, 0.51, 0.18, 0.01, 0.07, 0.0];
-        BCDataInit = [0.26, 0.33, 0.29, 0.05, 0.05, 0.0];
-    }  
+    initSubmissionBoxes()
+    ATLDataInit = [0.43, 0.31, 0.17, 0.03, 0.04, 0.0];
+    QCDataInit = [0.31, 0.17, 0.09, 0.01, 0.02, 0.3];
+    ONDataInit = [0.39, 0.34, 0.18, 0.02, 0.05, 0.0];
+    PRDataInit = [0.19, 0.47, 0.21, 0.01, 0.07, 0.0];
+    ABDataInit = [0.14, 0.51, 0.18, 0.01, 0.07, 0.0];
+    BCDataInit = [0.26, 0.33, 0.29, 0.05, 0.05, 0.0];
 })
