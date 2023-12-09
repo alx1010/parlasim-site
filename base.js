@@ -11,6 +11,8 @@ var othsv = []
 var WinningDiff = [];
 var WinningPerc = [];
 
+var rgnl = 0
+
 // Dynamic site styling for result table based on colour palette
 
 for(let x = 0; x < partyabbrv.length; x++){
@@ -139,15 +141,17 @@ function SeatResults() {
 function Swinger() {
   for (let x = 0; x < juris.length; x++) {
     for (let y = 0; y < partyabbrv.length; y++) {
-      if(initelec[y] == 0){break;}
-      eval(
-        partyabbrv[y] +
-          "raw[x] = " +
+      if(initelec[y] == 0){console.log("DIV 0 FAIL")}
+      else{
+        eval(
           partyabbrv[y] +
-          "rawinit[x] + (" +
-          partyabbrv[y] +
-          "rawinit[x] * (nationalvote[y] - initelec[y])/initelec[y])"
-      );
+            "raw[x] = " +
+            partyabbrv[y] +
+            "rawinit[x] + (" +
+            partyabbrv[y] +
+            "rawinit[x] * (nationalvote[y] - initelec[y])/initelec[y])"
+        );
+      }
     }
   }
 }
@@ -376,12 +380,27 @@ const lblMaj = document.getElementById("maj")
 lblMaj.innerText = (Math.floor(juris.length/2) + 1) + " needed for majority"
 
 simButton.addEventListener("click", () => {
-  Swinger();
-  initJurisVote();
-  //initNationalVote()
-  SeatResults();
-  colourmap();
-  setTextVotes();
-  setTextSeats();
-  jurisClicks();
+  if(rgnl == 0){
+    Swinger();
+    initJurisVote();
+    //initNationalVote();
+    SeatResults();
+    colourmap();
+    setTextVotes();
+    setTextSeats();
+    jurisClicks();
+    initSubmissionBoxes();
+  }
+  if(rgnl == 1){
+    RegionalSwinger();
+    initJurisVote();
+    initNationalVote();
+    SeatResults();
+    colourmap();
+    setTextVotes();
+    setTextSeats();
+    jurisClicks();
+  }
+
+  document.getElementById("submitCheck").innerText = "Waiting...";
 });

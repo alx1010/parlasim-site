@@ -1,5 +1,3 @@
-const rgnl = 1
-
 for (let x = 0; x < codes.length; x++) {
   eval("var " + codes[x] + "DataInit = []");
 }
@@ -11,7 +9,7 @@ PRDataInit = [0.19, 0.47, 0.21, 0.01, 0.07, 0.0];
 ABDataInit = [0.14, 0.51, 0.18, 0.01, 0.07, 0.0];
 BCDataInit = [0.26, 0.33, 0.29, 0.05, 0.05, 0.0];
 
-function Swinger() {
+function RegionalSwinger() {
   var sts = 0;
   var stc = 0;
 
@@ -19,32 +17,34 @@ function Swinger() {
     stc = sts + codesJuris[c];
 
     for (let y = 0; y < partyabbrv.length; y++) {
-      if(eval(codes[c] + "DataInit[y]") == 0){break;}
-      if (partyabbrv[y] == "bloc" && codes[c] != "QC") {
-        break;
-      }
-
-      var swing = twoDecRound(
-        eval(
-          "(" +
-            codes[c] +
-            "Data[y] -" +
-            codes[c] +
-            "DataInit[y]) /" +
-            codes[c] +
-            "DataInit[y]"
-        )
-      );
-
-      for (let s = sts; s < stc; s++) {
-        eval(
-          partyabbrv[y] +
-            "raw[s] = Math.round(" +
-            partyabbrv[y] +
-            "rawinit[s] + (" +
-            partyabbrv[y] +
-            "rawinit[s] * swing))"
+      if(eval(codes[c] + "DataInit[y]") == 0){console.log("DIV 0 FAIL, REGIONAL")}
+      else{
+        if (partyabbrv[y] == "bloc" && codes[c] != "QC") {
+          break;
+        }
+  
+        var swing = twoDecRound(
+          eval(
+            "(" +
+              codes[c] +
+              "Data[y] -" +
+              codes[c] +
+              "DataInit[y]) /" +
+              codes[c] +
+              "DataInit[y]"
+          )
         );
+  
+        for (let s = sts; s < stc; s++) {
+          eval(
+            partyabbrv[y] +
+              "raw[s] = Math.round(" +
+              partyabbrv[y] +
+              "rawinit[s] + (" +
+              partyabbrv[y] +
+              "rawinit[s] * swing))"
+          );
+        }
       }
     }
     sts = stc;
@@ -54,15 +54,17 @@ function Swinger() {
 
   for (let x = (juris.length-3); x < juris.length; x++) {
     for (let y = 0; y < partyabbrv.length; y++) {
-      if(initelec[y] == 0){break;}
-      eval(
-        partyabbrv[y] +
-          "raw[x] = " +
+      if(initelec[y] == 0){console.log("DIV 0 FAIL")}
+      else{
+        eval(
           partyabbrv[y] +
-          "rawinit[x] + (" +
-          partyabbrv[y] +
-          "rawinit[x] * (nationalvote[y] - initelec[y])/initelec[y])"
-      );
+            "raw[x] = " +
+            partyabbrv[y] +
+            "rawinit[x] + (" +
+            partyabbrv[y] +
+            "rawinit[x] * (nationalvote[y] - initelec[y])/initelec[y])"
+        );
+      }
     }
   }
 }
@@ -139,19 +141,6 @@ document.addEventListener("DOMContentLoaded", function () {
   initSubmissionBoxes();
 });
 
-simButton.addEventListener("click", () => {
-  Swinger();
-  initJurisVote();
-  initNationalVote();
-  SeatResults();
-  colourmap();
-  setTextVotes();
-  setTextSeats();
-  jurisClicks();
-
-  document.getElementById("submitCheck").innerText = "Waiting...";
-});
-
 function gatherCodesResults() {
   var value = 0;
 
@@ -173,6 +162,7 @@ function gatherCodesResults() {
 
 const btnSubmit = document.querySelector("#btnSubmit");
 btnSubmit.addEventListener("click", () => {
+  rgnl = 1
   gatherCodesResults();
   //for (let x = 0; x < codes.length; x++) {
   //  console.log(eval(codes[x] + "Data"));

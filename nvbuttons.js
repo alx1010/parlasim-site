@@ -48,7 +48,8 @@ for (let x = 0; x < partyabbrv.length; x++) {
     partyabbrv[x] +
       "UpButton.addEventListener(" +
       c +
-      ", () => {" + 
+      ", () => {" +
+      "rgnl = 0;" + 
       "if(keyID == 0){voteChange(x,0.01)}" + 
       "else if(keyID == 1){voteChange(x,0.001)}" + 
       "else if(keyID == 2){voteChange(x,0.0001)}})"
@@ -57,7 +58,8 @@ for (let x = 0; x < partyabbrv.length; x++) {
     partyabbrv[x] +
       "DownButton.addEventListener(" +
       c +
-      ", () => {" + 
+      ", () => {" +
+      "rgnl = 0;" + 
       "if(keyID == 0){voteChange(x,-0.01)}" + 
       "else if(keyID == 1){voteChange(x,-0.001)}" + 
       "else if(keyID == 2){voteChange(x,-0.0001)}})"
