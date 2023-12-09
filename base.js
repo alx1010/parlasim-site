@@ -11,6 +11,8 @@ var othsv = []
 var WinningDiff = [];
 var WinningPerc = [];
 
+var rgnl = 0
+
 // Dynamic site styling for result table based on colour palette
 
 for(let x = 0; x < partyabbrv.length; x++){
@@ -376,12 +378,27 @@ const lblMaj = document.getElementById("maj")
 lblMaj.innerText = (Math.floor(juris.length/2) + 1) + " needed for majority"
 
 simButton.addEventListener("click", () => {
-  Swinger();
-  initJurisVote();
-  //initNationalVote()
-  SeatResults();
-  colourmap();
-  setTextVotes();
-  setTextSeats();
-  jurisClicks();
+  if(rgnl == 0){
+    Swinger();
+    initJurisVote();
+    //initNationalVote();
+    SeatResults();
+    colourmap();
+    setTextVotes();
+    setTextSeats();
+    jurisClicks();
+    initSubmissionBoxes();
+  }
+  if(rgnl == 1){
+    RegionalSwinger();
+    initJurisVote();
+    initNationalVote();
+    SeatResults();
+    colourmap();
+    setTextVotes();
+    setTextSeats();
+    jurisClicks();
+  }
+
+  document.getElementById("submitCheck").innerText = "Waiting...";
 });

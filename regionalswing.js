@@ -1,5 +1,3 @@
-const rgnl = 1
-
 for (let x = 0; x < codes.length; x++) {
   eval("var " + codes[x] + "DataInit = []");
 }
@@ -11,7 +9,7 @@ PRDataInit = [0.19, 0.47, 0.21, 0.01, 0.07, 0.0];
 ABDataInit = [0.14, 0.51, 0.18, 0.01, 0.07, 0.0];
 BCDataInit = [0.26, 0.33, 0.29, 0.05, 0.05, 0.0];
 
-function Swinger() {
+function RegionalSwinger() {
   var sts = 0;
   var stc = 0;
 
@@ -139,19 +137,6 @@ document.addEventListener("DOMContentLoaded", function () {
   initSubmissionBoxes();
 });
 
-simButton.addEventListener("click", () => {
-  Swinger();
-  initJurisVote();
-  initNationalVote();
-  SeatResults();
-  colourmap();
-  setTextVotes();
-  setTextSeats();
-  jurisClicks();
-
-  document.getElementById("submitCheck").innerText = "Waiting...";
-});
-
 function gatherCodesResults() {
   var value = 0;
 
@@ -173,6 +158,7 @@ function gatherCodesResults() {
 
 const btnSubmit = document.querySelector("#btnSubmit");
 btnSubmit.addEventListener("click", () => {
+  rgnl = 1
   gatherCodesResults();
   //for (let x = 0; x < codes.length; x++) {
   //  console.log(eval(codes[x] + "Data"));
