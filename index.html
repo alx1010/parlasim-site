@@ -2,32 +2,27 @@
     <head>
         <title>ParlaSim</title>
         <style>
-            #buttonsa {
+            #buttons {
                 position: absolute;
-                left: 35%;
-                height: 100%;
-                width: 100%;
+                text-align: center;
+                left: 25%;
+                height: 60%;
+                width: 50%;
             }
-            #buttonsb {
-                position: absolute;
-                top: 30%;
-                left: 35%;
-                height: 100%;
-                width: 100%;
-            }
-            #buttonsa button {
-                height: 10%;
-                width: 15%;
+            #buttons button {
+                height: 50%;
+                width: 80%;
                 font-size: 130%;
+                color: beige;
+            }
+            #tr1 button{
                 background-color: rgb(10, 46, 112);
-                color: beige;
             }
-            #buttonsb button {
-                height: 10%;
-                width: 15%;
-                font-size: 130%;
+            #tr2 button{
                 background-color: rgb(112, 10, 10);
-                color: beige;
+            }
+            #tr3 button{
+                background-color: rgb(10, 112, 27);
             }
             p {
                 text-align: center;
@@ -37,15 +32,20 @@
     </head>
 
     <body>
-        <p>Canada Map Simulators</p>
-        <div id="buttonsa">
-            <a href="343/canMapDis.html"><button>National Vote 343</button></a>
-            <a href="343/canMapDisRegional.html"><button>Regional Vote 343</button></a>
-        </div>
-        <div id="buttonsb">
-            <a href="338/canMapDis.html"><button>National Vote 338</button></a>
-            <a href="338/canMapDisRegional.html"><button>Regional Vote 338</button></a>
-        </div>
+        <p>Map Simulators</p>
+        <table id="buttons">
+            <tr id="tr1">
+                <td><a href="343/canMapDis.html"><button>National Vote 343</button></a></td>
+                <td><a href="343/canMapDisRegional.html"><button>Regional Vote 343</button></a><td>
+            </tr>
+            <tr id="tr2">
+                <td><a href="338/canMapDis.html"><button>National Vote 338</button></a></td>
+                <td><a href="338/canMapDisRegional.html"><button>Regional Vote 338</button></a><td>
+            </tr>
+            <tr id="tr3">
+                <td colspan="2"><a href="USA/usaMapCO.html"><button style="width: 90%;">USA (in testing)</button></a></td>
+            </tr>
+        </table>
     </body>
 
 </html>
