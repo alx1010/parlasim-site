@@ -17,32 +17,34 @@ function RegionalSwinger() {
     stc = sts + codesJuris[c];
 
     for (let y = 0; y < partyabbrv.length; y++) {
-      if(eval(codes[c] + "DataInit[y]") == 0){break;}
-      if (partyabbrv[y] == "bloc" && codes[c] != "QC") {
-        break;
-      }
-
-      var swing = twoDecRound(
-        eval(
-          "(" +
-            codes[c] +
-            "Data[y] -" +
-            codes[c] +
-            "DataInit[y]) /" +
-            codes[c] +
-            "DataInit[y]"
-        )
-      );
-
-      for (let s = sts; s < stc; s++) {
-        eval(
-          partyabbrv[y] +
-            "raw[s] = Math.round(" +
-            partyabbrv[y] +
-            "rawinit[s] + (" +
-            partyabbrv[y] +
-            "rawinit[s] * swing))"
+      if(eval(codes[c] + "DataInit[y]") == 0){console.log("DIV 0 FAIL, REGIONAL")}
+      else{
+        if (partyabbrv[y] == "bloc" && codes[c] != "QC") {
+          break;
+        }
+  
+        var swing = twoDecRound(
+          eval(
+            "(" +
+              codes[c] +
+              "Data[y] -" +
+              codes[c] +
+              "DataInit[y]) /" +
+              codes[c] +
+              "DataInit[y]"
+          )
         );
+  
+        for (let s = sts; s < stc; s++) {
+          eval(
+            partyabbrv[y] +
+              "raw[s] = Math.round(" +
+              partyabbrv[y] +
+              "rawinit[s] + (" +
+              partyabbrv[y] +
+              "rawinit[s] * swing))"
+          );
+        }
       }
     }
     sts = stc;
@@ -52,15 +54,17 @@ function RegionalSwinger() {
 
   for (let x = (juris.length-3); x < juris.length; x++) {
     for (let y = 0; y < partyabbrv.length; y++) {
-      if(initelec[y] == 0){break;}
-      eval(
-        partyabbrv[y] +
-          "raw[x] = " +
+      if(initelec[y] == 0){console.log("DIV 0 FAIL")}
+      else{
+        eval(
           partyabbrv[y] +
-          "rawinit[x] + (" +
-          partyabbrv[y] +
-          "rawinit[x] * (nationalvote[y] - initelec[y])/initelec[y])"
-      );
+            "raw[x] = " +
+            partyabbrv[y] +
+            "rawinit[x] + (" +
+            partyabbrv[y] +
+            "rawinit[x] * (nationalvote[y] - initelec[y])/initelec[y])"
+        );
+      }
     }
   }
 }

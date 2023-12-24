@@ -141,15 +141,17 @@ function SeatResults() {
 function Swinger() {
   for (let x = 0; x < juris.length; x++) {
     for (let y = 0; y < partyabbrv.length; y++) {
-      if(initelec[y] == 0){break;}
-      eval(
-        partyabbrv[y] +
-          "raw[x] = " +
+      if(initelec[y] == 0){console.log("DIV 0 FAIL")}
+      else{
+        eval(
           partyabbrv[y] +
-          "rawinit[x] + (" +
-          partyabbrv[y] +
-          "rawinit[x] * (nationalvote[y] - initelec[y])/initelec[y])"
-      );
+            "raw[x] = " +
+            partyabbrv[y] +
+            "rawinit[x] + (" +
+            partyabbrv[y] +
+            "rawinit[x] * (nationalvote[y] - initelec[y])/initelec[y])"
+        );
+      }
     }
   }
 }
