@@ -153,7 +153,7 @@ const btnSubmit = document.querySelector("#btnSubmit");
 btnSubmit.addEventListener("click", () => {
   rgnl = 1
   gatherCodesResults();
-  for (let x = 0; x < codes.length; x++) {
-    console.log(eval(codes[x] + "Data"));
-  }
+  //for (let x = 0; x < codes.length; x++) {
+  //  console.log(eval(codes[x] + "Data"));
+  //}
 });
