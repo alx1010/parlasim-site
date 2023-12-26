@@ -1,14 +1,3 @@
-for (let x = 0; x < codes.length; x++) {
-  eval("var " + codes[x] + "DataInit = []");
-}
-
-ATLDataInit = [0.43, 0.31, 0.17, 0.03, 0.04, 0.0];
-QCDataInit = [0.31, 0.17, 0.09, 0.01, 0.02, 0.3];
-ONDataInit = [0.39, 0.34, 0.18, 0.02, 0.05, 0.0];
-PRDataInit = [0.19, 0.47, 0.21, 0.01, 0.07, 0.0];
-ABDataInit = [0.14, 0.51, 0.18, 0.01, 0.07, 0.0];
-BCDataInit = [0.26, 0.33, 0.29, 0.05, 0.05, 0.0];
-
 function RegionalSwinger() {
   var sts = 0;
   var stc = 0;

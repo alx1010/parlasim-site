@@ -227,10 +227,6 @@ function colourmap() {
     SVGMAP.getElementById(id).style.fill = colour;
   }
   
-  // testing purposes
-  var jtc = juris.length; // juris to count
-  var jts = 0; // juris to skip
-
   if (mapMode == 1) {
     var top = 0.25
     var decrement = 0.05
