@@ -227,16 +227,13 @@ function colourmap() {
     SVGMAP.getElementById(id).style.fill = colour;
   }
   
-  // testing purposes
-  var jtc = juris.length; // juris to count
-  var jts = 0; // juris to skip
-
   if (mapMode == 1) {
     var top = 0.25
     var decrement = 0.05
     var bot = twoDecRound(top-(decrement*(eval*(partyabbrv[0] + 'palette.length - 1'))))
     // Colours the map based on the margin of victory, default
     for (let x = 0; x < juris.length; x++) {
+      console.log(juris[x])
       id = idprefix + juris[x]
       eval('setSVGColour("' + id + '", ' + SeatWinner[x] + "palette[Math.ceil((top-WinningDiff[x])/decrement)])")
       if(WinningDiff[x]>top){eval('setSVGColour("' + id + '", ' + SeatWinner[x] + "palette[0])")}
