@@ -1,0 +1,64 @@
+#myTable button {
+  width: 90%;
+  height: 80%;
+  font-size: 60%;
+  font-weight: bold;
+  background-color: beige;
+}
+
+#myTable table {
+  position: absolute;
+  z-index: 2;
+  width: 40%;
+  height: 10%;
+  font-size: 120%;
+}
+
+.buttons {
+  position: absolute;
+  z-index: 2;
+  top:21%;
+}
+
+#myTable td {
+  width: 10%;
+  height: 15%;
+}
+
+#myTable table, #myTable td, #jurisTable table, #jurisTable td, th {
+  border: 3px solid black;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.svgmap {
+  position: absolute;
+  left: 24.5%;
+  top: 10%;
+  width: 80%;
+  height: 90%;
+}
+
+.map {
+  z-index: 1;
+} 
+
+#jurisTable {
+  position: absolute;
+  left: 52%;
+  top: -3%;
+  width: 25%;
+  font-size: 100%;
+}
+
+#jurisTable table {
+  width: 100%; font-size: 100%;
+}
+ 
+#myTableInputs input {
+  width: 40px;
+}
+
+#maj {
+  font-size: 80%; font-weight: bold;
+}
