@@ -1,0 +1,138 @@
+<html>
+    <head>
+        <title>BC 93</title>
+        <link rel='stylesheet' media='screen and (min-width: 1348px)' href='sitestyleX1368.css' />
+        <link rel='stylesheet' media='screen and (min-width: 1900px)' href='sitestyleX1920.css' />
+        <link rel="stylesheet" href="../canadastyle.css">
+    </head>
+
+    <body scroll="no" style="overflow: hidden">
+
+      <div id="myTable">
+        <table>
+          <tr style="height: 20%;">
+            <th class="ndpheader">NDP</th>
+            <th class="bcuheader">BCU</th>
+            <th class="cpbheader">CPB</th>
+            <th class="grnheader">GRN</th>
+            <th id = "sumcheck" style="font-size: 120%;" rowspan="2"></th>
+          </tr>
+          <tr style="height: 20%;">
+            <th class="ndp" id = "ndpVotes"></th>
+            <th class="bcu" id = "bcuVotes"></th>
+            <th class="cpb" id = "cpbVotes"></th>
+            <th class="grn" id = "grnVotes"></th>
+          </tr>
+          <tr>
+            <td class="ndp"><button id = "ndpup">+%</button></td>
+            <td class="bcu"><button id = "bcuup">+%</button></td>
+            <td class="cpb"><button id = "cpbup">+%</button></td>
+            <td class="grn"><button id = "grnup">+%</button></td>
+            <td style="font-size: 70%; font-weight: bold;" rowspan="2">Shift: +- 0.10% Ctrl: +- 0.01%</td>   
+          </tr>
+          <tr>
+            <td class="ndp"><button id = "ndpdown">-%</button></td>
+            <td class="bcu"><button id = "bcudown">-%</button></td>
+            <td class="cpb"><button id = "cpbdown">-%</button></td>
+            <td class="grn"><button id = "grndown">-%</button></td>
+          </tr>
+          <tr style="font-size: 80%; height: 30%;">
+            <td class="ndp" id = "ndpSeats"></td>
+            <td class="bcu" id = "bcuSeats"></td>
+            <td class="cpb" id = "cpbSeats"></td>
+            <td class="grn" id = "grnSeats"></td>
+            <td id="maj">172 needed for Majority</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class = "buttons" style="z-index: 3;";>
+        <br><table>
+          <tr>
+            <td><button class ="sim" style="height: 100%; width: 100%; font-size: 80%; font-weight: bold;"> Sim </button></td>
+            <td><p style="font-weight: bold;">| Modes:</p></td>
+            <td><button class ="modeone"> Margin </button></td>
+            <td><button class ="modetwo"> Winning % </button></td>
+            <td><button class ="modethree"> Flips </button></td>
+            <td><button class ="modefour"> Solid Colour </button></td>
+          </tr>
+        </table>
+      </div>
+
+      <div id="jurisTable">
+        <p id="jurisName" style="font-size: 140%; font-weight: bold;"> Juris Name</p>
+        <table>
+          <tr>
+            <td>NDP</td>
+            <td>BCU</td>
+            <td>CPB</td>
+            <td>GRN</td>
+          </tr>
+          <tr>
+            <td id="ndpJuris">~~%</td>
+            <td id="bcuJuris">~~%</td>
+            <td id="cpbJuris">~~%</td>
+            <td id="grnJuris">~~%</td>
+          </tr>
+        </table>
+        <p id="jurisMargin" style="font-size: 120%">Margin: ~~%</p>
+        <p id="jurisFlip" style="font-size: 120%">~~~ Hold</p>
+      </div>
+
+      <div id="retentionTable">
+
+        <br><br><table style="width:100%; height: 20%; font-size: 100%;">
+          <tr style="font-size: 160%;">
+            <td colspan="7" style="font-weight: bold;">Voter Retention:</td>
+          </tr>
+          <tr><td colspan="7">-----------------------------------------------------------------------</td></tr>
+          <tr style="font-size: 150%">
+            <td>NDP</td>
+            <td>BCU</td>
+            <td>CPB</td>
+            <td>GRN</td>
+          </tr>
+          <tr><td colspan="7">-----------------------------------------------------------------------</td></tr>
+          <tr>
+            <td class="rInputs"><input type="text"></td>
+            <td class="rInputs"><input type="text"></td>
+            <td class="rInputs"><input type="text"></td>
+            <td class="rInputs"><input type="text"></td>
+          </tr>
+          <tr><td colspan="7">-----------------------------------------------------------------------</td></tr>
+          <tr>
+            <td class="rInputs"><input type="text"></td>
+            <td class="rInputs"><input type="text"></td>
+            <td class="rInputs"><input type="text"></td>
+            <td class="rInputs"><input type="text"></td>
+          </tr>
+          <tr><td colspan="7">-----------------------------------------------------------------------</td></tr>
+          <tr>
+            <td class="rInputs"><input type="text"></td>
+            <td class="rInputs"><input type="text"></td>
+            <td class="rInputs"><input type="text"></td>
+            <td class="rInputs"><input type="text"></td>
+          </tr>
+          <tr><td colspan="7">-----------------------------------------------------------------------</td></tr>
+          <tr>
+            <td class="rInputs"><input type="text"></td>
+            <td class="rInputs"><input type="text"></td>
+            <td class="rInputs"><input type="text"></td>
+            <td class="rInputs"><input type="text"></td>
+          </tr>
+          <tr><td colspan="7">-----------------------------------------------------------------------</td></tr>
+        </table>
+        
+        <button id="rSubmit" style="width: 60px; height: 20px; visibility: hidden;"> Submit</button>
+      </div>
+
+      <script type="text/javascript" src="../BC.js"></script>
+      <script type="text/javascript" src="data.js"></script>
+      <script type="text/javascript" src="../base.js"></script>
+      <script type="text/javascript" src="../nvbuttons.js"></script>
+      <script type="text/javascript" src="../votershift.js"></script>
+      <div class="map">
+        <object type="image/svg+xml" data="bc93B.svg" class="svgmap"></object>
+      </div>
+    </body>  
+</html>

@@ -1,0 +1,32 @@
+var jurisnames = [	"Bulkley Valley-Stikine",	"Nechako Lakes",	"North Coast-Haida Gwaii",	"Peace River North",	"Peace River South",	"Prince George-North Cariboo",	"Prince George-Mackenzie",	"Prince George-Valemount",	"Skeena",	"Boundary-Similkameen",	"Cariboo-Chilcotin",	"Columbia River-Revelstoke",	"Fraser-Nicola",	"Kamloops Centre",	"Kamloops North-Thompson",	"Kelowna Central",	"Kelowna-Lake Country-Coldstream",	"Kelowna-Mission",	"Kootenay Centre",	"Kootenay-Monashee",	"Kootenay-Rockies",	"Penticton-Summerland",	"Salmon Arm-Shuswap",	"Vernon-Lumby",	"West Kelowna-Peachland",	"Abbotsford South",	"Abbotsford West",	"Abbotsford-Mission",	"Chilliwack North",	"Chilliwack-Cultus Lake",	"Langley-Abbotsford",	"Langley-Walnut Grove",	"Langley-Willowbrook",	"Maple Ridge East",	"Maple Ridge-Pitt Meadows",	"Delta North",	"Delta South",	"Richmond Centre",	"Richmond-Bridgeport",	"Richmond-Queensborough",	"Richmond-Steveston",	"Surrey City Centre",	"Surrey North",	"Surrey South",	"Surrey-Cloverdale",	"Surrey-Fleetwood",	"Surrey-Guildford",	"Surrey-Newton",	"Surrey-Panorama",	"Surrey-Serpentine River",	"Surrey-White Rock",	"Burnaby Centre",	"Burnaby East",	"Burnaby North",	"Burnaby South-Metrotown",	"Burnaby-New Westminster",	"Coquitlam-Burke Mountain",	"Coquitlam-Maillardville",	"New Westminster-Coquitlam",	"North Vancouver-Lonsdale",	"North Vancouver-Seymour",	"Port Coquitlam",	"Port Moody-Burquitlam",	"Powell River-Sunshine Coast",	"West Vancouver-Capilano",	"West Vancouver-Sea to Sky",	"Vancouver-Fraserview",	"Vancouver-Hastings",	"Vancouver-Kensington",	"Vancouver-Langara",	"Vancouver-Little Mountain",	"Vancouver-Point Grey",	"Vancouver-Quilchena",	"Vancouver-Renfrew",	"Vancouver-South Granville",	"Vancouver-Strathcona",	"Vancouver-West End",	"Vancouver-Yaletown",	"Courtenay-Comox",	"Cowichan Valley",	"Esquimalt-Colwood",	"Juan de Fuca-Malahat",	"Ladysmith-Oceanside",	"Langford-Highlands",	"Mid Island-Pacific Rim",	"Nanaimo-Gabriola Island",	"Nanaimo-Lantzville",	"North Island",	"Oak Bay-Gordon Head",	"Saanich North and the Islands",	"Saanich South",	"Victoria-Beacon Hill",	"Victoria-Swan Lake",	]
+var juris = [	"seat001",	"seat002",	"seat003",	"seat004",	"seat005",	"seat006",	"seat007",	"seat008",	"seat009",	"seat010",	"seat011",	"seat012",	"seat013",	"seat014",	"seat015",	"seat016",	"seat017",	"seat018",	"seat019",	"seat020",	"seat021",	"seat022",	"seat023",	"seat024",	"seat025",	"seat026",	"seat027",	"seat028",	"seat029",	"seat030",	"seat031",	"seat032",	"seat033",	"seat034",	"seat035",	"seat036",	"seat037",	"seat038",	"seat039",	"seat040",	"seat041",	"seat042",	"seat043",	"seat044",	"seat045",	"seat046",	"seat047",	"seat048",	"seat049",	"seat050",	"seat051",	"seat052",	"seat053",	"seat054",	"seat055",	"seat056",	"seat057",	"seat058",	"seat059",	"seat060",	"seat061",	"seat062",	"seat063",	"seat064",	"seat065",	"seat066",	"seat067",	"seat068",	"seat069",	"seat070",	"seat071",	"seat072",	"seat073",	"seat074",	"seat075",	"seat076",	"seat077",	"seat078",	"seat079",	"seat080",	"seat081",	"seat082",	"seat083",	"seat084",	"seat085",	"seat086",	"seat087",	"seat088",	"seat089",	"seat090",	"seat091",	"seat092",	"seat093",	]
+
+var ndpraw = [	3745,	3031,	4544,	1238,	1180,	5195,	5092,	4001,	4961,	10498,	5214,	6086,	7119,	7607,	9881,	7506,	6367,	7470,	7957,	10330,	5184,	9511,	8903,	7553,	6587,	6380,	6780,	10653,	6296,	7666,	7832,	10238,	9951,	12223,	15181,	11672,	8947,	6353,	6501,	8622,	11371,	8221,	9630,	6423,	11139,	12886,	10356,	9573,	9675,	9203,	10600,	9756,	10847,	10540,	7972,	10954,	10346,	12960,	12795,	14834,	13845,	15370,	13144,	12737,	7426,	6055,	11362,	13362,	12149,	7488,	11712,	11078,	6115,	11158,	15706,	13727,	12439,	5346,	14663,	11778,	15663,	10350,	12343,	11636,	14335,	12542,	12560,	12467,	14785,	9214,	15966,	14395,	14505,	]
+var bcuraw = [	1904,	4611,	1429,	6857,	3862,	8720,	7820,	7175,	5810,	7733,	8550,	7950,	6109,	7660,	14667,	11569,	10123,	12393,	4496,	1828,	9042,	11502,	13385,	7026,	11415,	8415,	8193,	8086,	4987,	5955,	9507,	6831,	6520,	7935,	8528,	6783,	13224,	5521,	7962,	7658,	10224,	3364,	5315,	10136,	7535,	6143,	5198,	4586,	6301,	7195,	10808,	5475,	4851,	5803,	3831,	3654,	7129,	6338,	3446,	6686,	10341,	5009,	7373,	4171,	13568,	8490,	6654,	3885,	5653,	7885,	7665,	7329,	12185,	3315,	6843,	2547,	4014,	5979,	8655,	4315,	4180,	2765,	9169,	2869,	4322,	4303,	7781,	5907,	6626,	5958,	7197,	3646,	2773,	]
+var cpbraw = [	0,	0,	0,	4231,	2303,	1203,	0,	19,	0,	2353,	2,	7,	219,	559,	1356,	0,	807,	0,	150,	1395,	0,	1,	17,	2665,	0,	439,	1611,	1295,	2377,	568,	1687,	2305,	1571,	0,	0,	0,	0,	0,	185,	923,	0,	0,	0,	0,	408,	106,	19,	0,	0,	333,	0,	0,	0,	0,	0,	234,	0,	95,	678,	0,	0,	0,	705,	0,	0,	0,	0,	0,	0,	0,	55,	0,	0,	0,	132,	0,	0,	277,	0,	0,	0,	0,	871,	0,	0,	0,	539,	1462,	0,	0,	0,	0,	0,	]
+var grnraw = [	0,	0,	0,	0,	0,	1378,	1681,	2188,	0,	0,	1821,	2081,	2097,	2947,	3436,	3588,	3080,	4056,	5939,	2863,	1539,	2848,	3822,	3316,	2188,	2081,	1543,	2501,	1601,	1736,	2547,	2656,	2095,	2262,	0,	1951,	3750,	238,	1264,	1327,	0,	5,	0,	1695,	1843,	1698,	1385,	1152,	241,	1080,	3894,	1999,	2412,	2089,	1671,	2333,	1733,	2541,	3825,	3146,	4719,	3023,	2753,	8113,	3878,	8993,	1866,	4312,	2408,	1434,	3391,	3914,	3137,	1515,	4565,	4040,	3250,	1494,	5681,	10234,	6267,	6617,	5224,	2780,	4999,	6771,	5230,	4729,	7384,	17011,	6374,	7957,	6750,	]
+var othraw = [	1585,	1184,	267,	0,	199,	116,	547,	390,	389,	474,	803,	2,	1472,	27,	124,	568,	402,	0,	425,	0,	0,	603,	0,	0,	769,	1363,	89,	402,	656,	4669,	658,	303,	0,	0,	0,	0,	0,	0,	0,	0,	483,	244,	209,	47,	61,	27,	283,	32,	275,	162,	2080,	0,	252,	0,	0,	101,	0,	9,	197,	0,	291,	563,	135,	1,	186,	0,	0,	505,	185,	175,	208,	0,	20,	236,	179,	0,	259,	194,	0,	0,	251,	77,	406,	93,	992,	0,	52,	0,	144,	0,	0,	314,	361,	]
+
+var othrawinit = []
+
+for(let y = 0; y < partyabbrv.length; y++){
+  eval('var ' + partyabbrv[y] + 'rawinit = []')
+  for(let x = 0; x < juris.length; x++){
+    eval(partyabbrv[y] + 'rawinit[x] = ' + partyabbrv[y] + 'raw[x]')
+    othrawinit[x] = othraw[x]
+    //lpcrawinit[x] = lpcraw[x]
+  }
+}
+
+idprefix = ""
+
+// Codes for regional swing
+
+var codes = ["BC"];
+var codesJuris = [93];
+
+for (let x = 0; x < codes.length; x++) {
+  eval("var " + codes[x] + "DataInit = []");
+}
+
+BCDataInit = [0.48, 0.34, 0.02, 0.15];
