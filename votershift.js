@@ -38,7 +38,7 @@ const rSubmit = document.getElementById("rSubmit")
 
 simButton.addEventListener('click', () => {
     retentionSwinger()
-
+    
     initJurisVote();
     initNationalVote();
     SeatResults();
