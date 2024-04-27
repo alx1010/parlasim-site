@@ -19,14 +19,3 @@ for(let y = 0; y < partyabbrv.length; y++){
 }
 
 idprefix = ""
-
-// Codes for regional swing
-
-var codes = ["BC"];
-var codesJuris = [93];
-
-for (let x = 0; x < codes.length; x++) {
-  eval("var " + codes[x] + "DataInit = []");
-}
-
-BCDataInit = [0.48, 0.34, 0.02, 0.15];
