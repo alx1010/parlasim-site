@@ -28,7 +28,7 @@ for(let x = 0; x < partyabbrv.length; x++){
   }
 }
 
-// Margin is default map mode
+// Margin (mode 1) is default map mode
 var mapMode = 1;
 
 function twoDecRound(num) {
@@ -294,14 +294,14 @@ function colourmap() {
 
 function setTextSeats() {
   for (let x = 0; x < partyabbrv.length; x++) {
-    var s = SeatCount[x];
+    let s = SeatCount[x];
     eval(partyabbrv[x] + 'OutputSeats.innerText = s + " seats"');
   }
 }
 
 function setTextVotes() {
   for (let x = 0; x < partyabbrv.length; x++) {
-    var p = (twoDecRound(nationalvote[x] * 100)).toFixed(2) + "%";
+    let p = (twoDecRound(nationalvote[x] * 100)).toFixed(2) + "%";
     eval(partyabbrv[x] + "OutputVotes.innerText = p");
   }
   sumCheck.innerText = (twoDecRound(sum(nationalvote)* 100)).toFixed(2) + "%";
