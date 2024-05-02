@@ -1,7 +1,7 @@
 <html>
     <head>
-        <title>Canada 308</title>
-        <link rel='stylesheet' media='screen and (min-width: 1348px) and (max-width: 1648px)' href='sitestyleX1368.css' />
+        <title>Canada 343</title>
+        <link rel='stylesheet' media='screen and (min-width: 1348px)' href='sitestyleX1368.css' />
         <link rel='stylesheet' media='screen and (min-width: 1900px)' href='sitestyleX1920.css' />
         <link rel="stylesheet" href="../canadastyle.css">
     </head>
@@ -15,6 +15,7 @@
             <th class="cpcheader">CPC</th>
             <th class="ndpheader">NDP</th>
             <th class="grnheader">GRN</th>
+            <th class="ppcheader">PPC</th>
             <th class="blocheader">Bloc</th>
             <th id = "sumcheck" style="font-size: 120%;" rowspan="2"></th>
           </tr>
@@ -23,6 +24,7 @@
             <th class="cpc" id = "cpcVotes"></th>
             <th class="ndp" id = "ndpVotes"></th>
             <th class="grn" id = "grnVotes"></th>
+            <th class="ppc" id = "ppcVotes"></th>
             <th class="bloc" id = "blocVotes"></th>
           </tr>
           <tr>
@@ -30,6 +32,7 @@
             <td class="cpc"><button id = "cpcup">+%</button></td>
             <td class="ndp"><button id = "ndpup">+%</button></td>
             <td class="grn"><button id = "grnup">+%</button></td>
+            <td class="ppc"><button id = "ppcup">+%</button></td>
             <td class="bloc"><button id = "blocup">+%</button></td>
             <td style="font-size: 70%; font-weight: bold;" rowspan="2">Shift: +- 0.10% Ctrl: +- 0.01%</td>   
           </tr>
@@ -38,6 +41,7 @@
             <td class="cpc"><button id = "cpcdown">-%</button></td>
             <td class="ndp"><button id = "ndpdown">-%</button></td>
             <td class="grn"><button id = "grndown">-%</button></td>
+            <td class="ppc"><button id = "ppcdown">-%</button></td>
             <td class="bloc"><button id = "blocdown">-%</button></td>   
           </tr>
           <tr style="font-size: 80%; height: 30%;">
@@ -45,6 +49,7 @@
             <td class="cpc" id = "cpcSeats"></td>
             <td class="ndp" id = "ndpSeats"></td>
             <td class="grn" id = "grnSeats"></td>
+            <td class="ppc" id = "ppcSeats"></td>
             <td class="bloc" id = "blocSeats"></td>
             <td id="maj">172 needed for Majority</td>
           </tr>
@@ -54,21 +59,12 @@
       <div class = "buttons" style="z-index: 3;";>
         <br><table>
           <tr>
-            <td><button class ="sim" style="font-weight: bold;"> Sim </button></td>
+            <td><button class ="sim" style="height: 100%; width: 100%; font-size: 80%; font-weight: bold;"> Sim </button></td>
             <td><p style="font-weight: bold;">| Modes:</p></td>
             <td><button class ="modeone"> Margin </button></td>
             <td><button class ="modetwo"> Winning % </button></td>
             <td><button class ="modethree"> Flips </button></td>
             <td><button class ="modefour"> Solid Colour </button></td>
-          </tr>
-        </table>
-        <table>
-          <tr>
-            <td><p style="font-weight: bold;">Datasets:</p></td>
-            <td><button id ="dataOne"> 2004 </button></td>
-            <td><button id ="dataTwo"> 2006 </button></td>
-            <td><button id ="dataThree"> 2008 </button></td>
-            <td><button id ="dataFour"> 2011 </button></td>
           </tr>
         </table>
       </div>
@@ -81,6 +77,7 @@
             <td>CPC</td>
             <td>NDP</td>
             <td>GRN</td>
+            <td>PPC</td>
             <td>Bloc</td>
           </tr>
           <tr">
@@ -88,6 +85,7 @@
             <td id="cpcJuris">~~%</td>
             <td id="ndpJuris">~~%</td>
             <td id="grnJuris">~~%</td>
+            <td id="ppcJuris">~~%</td>
             <td id="blocJuris">~~%</td>
           </tr>
         </table>
@@ -95,7 +93,7 @@
         <p id="jurisFlip" style="font-size: 120%">~~~ Hold</p>
       </div>
 
-      <div id="myTableInputs" style="position: absolute; z-index: 2; top: 28%;">
+      <div id="myTableInputs" style="position: absolute; z-index: 2; top: 24%;">
 
         <br><br><table style="width:100%; height: 20%; font-size: 100%;">
           <tr style="font-size: 160%;">
@@ -108,6 +106,7 @@
             <td>CPC</td>
             <td>NDP</td>
             <td>GRN</td>
+            <td>PPC</td>
             <td>Bloc</td>
           </tr>
           <tr><td colspan="7">-----------------------------------------------------------------------</td></tr>
@@ -117,6 +116,7 @@
             <td><input type="text" id="cpcBC" size="1pc"><br></td>
             <td><input type="text" id="ndpBC" size="1pc"><br></td>
             <td><input type="text" id="grnBC" size="1pc"><br></td>
+            <td><input type="text" id="ppcBC" size="1pc"><br></td>
             <td>/////////////</td>
           </tr>
           <tr><td colspan="7">-----------------------------------------------------------------------</td></tr>
@@ -126,6 +126,7 @@
             <td><input type="text" id="cpcAB" size="1pc"><br></td>
             <td><input type="text" id="ndpAB" size="1pc"><br></td>
             <td><input type="text" id="grnAB" size="1pc"><br></td>
+            <td><input type="text" id="ppcAB" size="1pc"><br></td>
             <td>/////////////</td>
           </tr>
           </tr>
@@ -136,6 +137,7 @@
             <td><input type="text" id="cpcPR" size="1pc"><br></td>
             <td><input type="text" id="ndpPR" size="1pc"><br></td>
             <td><input type="text" id="grnPR" size="1pc"><br></td>
+            <td><input type="text" id="ppcPR" size="1pc"><br></td>
             <td>/////////////</td>
           </tr>
           <tr><td colspan="7">-----------------------------------------------------------------------</td></tr>
@@ -145,6 +147,7 @@
             <td><input type="text" id="cpcON" size="1pc"><br></td>
             <td><input type="text" id="ndpON" size="1pc"><br></td>
             <td><input type="text" id="grnON" size="1pc"><br></td>
+            <td><input type="text" id="ppcON" size="1pc"><br></td>
             <td>/////////////</td>
           </tr>
           <tr><td colspan="7">-----------------------------------------------------------------------</td></tr>
@@ -154,6 +157,7 @@
             <td><input type="text" id="cpcQC" size="1pc"><br></td>
             <td><input type="text" id="ndpQC" size="1pc"><br></td>
             <td><input type="text" id="grnQC" size="1pc"><br></td>
+            <td><input type="text" id="ppcQC" size="1pc"><br></td>
             <td><input type="text" id="blocQC" size="1pc"><br></td>
           </tr>
           <tr><td colspan="7">-----------------------------------------------------------------------</td></tr>
@@ -163,6 +167,7 @@
             <td><input type="text" id="cpcATL" size="1pc"><br></td>
             <td><input type="text" id="ndpATL" size="1pc"><br></td>
             <td><input type="text" id="grnATL" size="1pc"><br></td>
+            <td><input type="text" id="ppcATL" size="1pc"><br></td>
             <td>/////////////</td>
           </tr>
           <tr><td colspan="7">-----------------------------------------------------------------------</td></tr>
@@ -176,13 +181,13 @@
         </table>       
       </div> 
 
-      <script type="text/javascript" src="../Styles/canada308.js"></script>
+      <script type="text/javascript" src="../../Styles/canada.js"></script>
       <script type="text/javascript" src="data.js"></script>
-      <script type="text/javascript" src="../nvbuttons.js"></script>
-      <script type="text/javascript" src="../regionalswing.js"></script>
-      <script type="text/javascript" src="../base.js"></script>
+      <script type="text/javascript" src="../../nvbuttons.js"></script>
+      <script type="text/javascript" src="../../regionalswing.js"></script>
+      <script type="text/javascript" src="../../base.js"></script>
       <div class="map">
-        <object type="image/svg+xml" data="can308B.svg" class="svgmap"></object>
+        <object type="image/svg+xml" data="can343.svg" class="svgmap"></object>
       </div>
     </body>  
 </html>

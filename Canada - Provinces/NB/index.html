@@ -1,0 +1,97 @@
+<html>
+    <head>
+        <title>NB 49</title>
+        <link rel='stylesheet' media='screen and (min-width: 1348px)' href='sitestyleX1368.css' />
+        <link rel='stylesheet' media='screen and (min-width: 1900px)' href='sitestyleX1920.css' />
+        <link rel="stylesheet" href="../canadastyle.css">
+    </head>
+
+    <body scroll="no" style="overflow: hidden">
+
+      <div id="myTable">
+        <table>
+          <tr style="height: 20%;">
+            <th class="pcnbheader">PCNB</th>
+            <th class="libheader">LIB</th>
+            <th class="grnheader">GRN</th>
+            <th class="panbheader">PANB</th>
+            <th class="ndpheader">NDP</th>
+            <th id = "sumcheck" style="font-size: 120%;" rowspan="2"></th>
+          </tr>
+          <tr style="height: 20%;">
+            <th class="pcnb" id = "pcnbVotes"></th>
+            <th class="lib" id = "libVotes"></th>
+            <th class="grn" id = "grnVotes"></th>
+            <th class="panb" id = "panbVotes"></th>
+            <th class="ndp" id = "ndpVotes"></th>
+          </tr>
+          <tr>
+            <td class="pcnb"><button id = "pcnbup">+%</button></td>
+            <td class="lib"><button id = "libup">+%</button></td>
+            <td class="grn"><button id = "grnup">+%</button></td>
+            <td class="panb"><button id = "panbup">+%</button></td>
+            <td class="ndp"><button id = "ndpup">+%</button></td>
+            <td style="font-size: 70%; font-weight: bold;" rowspan="2">Shift: +- 0.10% Ctrl: +- 0.01%</td>   
+          </tr>
+          <tr>
+            <td class="pcnb"><button id = "pcnbdown">-%</button></td>
+            <td class="lib"><button id = "libdown">-%</button></td>
+            <td class="grn"><button id = "grndown">-%</button></td>
+            <td class="panb"><button id = "panbdown">-%</button></td>
+            <td class="ndp"><button id = "ndpdown">-%</button></td>
+          </tr>
+          <tr style="font-size: 80%; height: 30%;">
+            <td class="pcnb" id = "pcnbSeats"></td>
+            <td class="lib" id = "libSeats"></td>
+            <td class="grn" id = "grnSeats"></td>
+            <td class="panb" id = "panbSeats"></td>
+            <td class="ndp" id = "ndpSeats"></td>
+            <td id="maj">172 needed for Majority</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class = "buttons" style="z-index: 3;";>
+        <br><table>
+          <tr>
+            <td><button class ="sim" style="height: 100%; width: 100%; font-size: 80%; font-weight: bold;"> Sim </button></td>
+            <td><p style="font-weight: bold;">| Modes:</p></td>
+            <td><button class ="modeone"> Margin </button></td>
+            <td><button class ="modetwo"> Winning % </button></td>
+            <td><button class ="modethree"> Flips </button></td>
+            <td><button class ="modefour"> Solid Colour </button></td>
+          </tr>
+        </table>
+      </div>
+
+      <div id="jurisTable">
+        <p id="jurisName" style="font-size: 140%; font-weight: bold;"> Juris Name</p>
+        <table>
+          <tr>
+            <td>PCNB</td>
+            <td>LIB</td>
+            <td>GRN</td>
+            <td>PANB</td>
+            <td>NDP</td>
+          </tr>
+          <tr">
+            <td id="pcnbJuris">~~%</td>
+            <td id="libJuris">~~%</td>
+            <td id="grnJuris">~~%</td>
+            <td id="panbJuris">~~%</td>
+            <td id="ndpJuris">~~%</td>
+          </tr>
+        </table>
+        <p id="jurisMargin" style="font-size: 120%">Margin: ~~%</p>
+        <p id="jurisFlip" style="font-size: 120%">~~~ Hold</p>
+      </div>
+
+      <script type="text/javascript" src="../../Styles/NB.js"></script>
+      <script type="text/javascript" src="data.js"></script>
+      <script type="text/javascript" src="../../base.js"></script>
+      <script type="text/javascript" src="../../nvbuttons.js"></script>
+      <div class="map">
+        <object type="image/svg+xml" data="nb49C.svg" class="svgmap"></object>
+      </div>
+    </body>  
+</html>
